@@ -1,0 +1,198 @@
+.Program-detail {
+    padding-top: 3em;
+}
+.detail-container {
+    background-color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 60em;
+    margin: 0 auto;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+}
+.detail-wrapper {
+    width: 70%;
+    text-align: left;
+    border-right: 2px solid #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.detail-header h2,
+.detail-header h4 {
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+.detail-header h4 {
+    margin-top: 0;
+}
+.detail-header {
+    margin-top: 2em;
+    width: 70%;
+}
+.detail-image-wrapper {
+    width: 100%;
+    margin: 2em auto 0;
+}
+.detail-image-wrapper img {
+    width: 100%;
+    height: auto;
+}
+.detail-body {
+    width: 70%;
+    margin: 2em auto;
+}
+.detail-description ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-weight: bold;
+    text-align: center;
+}
+.detail-description,
+.detail-info {
+    font-size: 1.1em;
+    line-height: 1.2em;
+}
+.detail-description ul > span {
+    display: block;
+    margin-bottom: 0.5em;
+}
+.detail-description li {
+    font-weight: normal;
+}
+.detail-info {
+    margin-top: 3em;
+    text-align: center;
+    font-weight: bold;
+}
+.similar-events {
+    margin-top: 2em;
+    height: 100%;
+    width: 20%;
+    padding-right: 5%;
+}
+.event-items-container {
+    background-color: #FFFBFC;
+    height: 85%;
+    overflow-y: scroll;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 2px solid #ececec;
+}
+.event-item {
+    width: 85%; 
+    height: auto; 
+    -ms-flex-item-align: center; 
+        align-self: center;
+    padding: 1em 0;
+}
+.event-item img {
+    width: 100%;
+    height: auto;
+}
+.item-body {
+    width: 90%;
+    margin: 0 auto;
+}
+.item-body h3 {
+    margin-bottom: 0;
+}
+.item-body p {
+    margin-top: 0.2em;
+    font-size: 0.9em;
+}
+.item-body ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em;
+}
+.item-body ul > span {
+    font-weight: bold;
+}
+#link-more {
+    text-decoration: none;
+}
+.event-items-container::-webkit-scrollbar {
+    width: 10px;
+}
+.event-items-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+.event-items-container::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+
+@media (max-width: 1100px) {
+    .similar-events {
+        width: 30%;
+    }
+}
+@media (max-width: 900px) {
+    .similar-events {
+        width: 25%;
+    }
+    .detail-header,
+    .detail-body {
+        width: 85%;
+    }
+    .detail-description,
+    .detail-info {
+        font-size: 0.9em;
+        line-height: 1.2em;
+    }
+}
+@media (max-width: 700px) {
+    .detail-container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        height: auto;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }
+    .detail-wrapper{
+        width: 90%;
+        margin: 0 auto 2em;
+    }
+    .detail-info {
+        margin-top: 0;
+    }
+    .similar-events {
+        padding-right: 0;
+        width: 60%;
+    }
+    .event-items-container {
+        overflow-y: hidden;
+    }
+    .event-item {
+        margin-bottom: 1em;
+    }
+}
+@media (max-width: 500px) {
+    .similar-events {
+        width: 80%;
+    }
+}

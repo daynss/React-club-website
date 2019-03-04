@@ -1,0 +1,50 @@
+.UpcomingEvent {
+    width: 30%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #FFFBFC;
+    border: 1px solid #ececec;
+}
+.upcoming-img {
+    width: 100%;
+    height: 12em;
+    overflow: hidden;
+}
+.upcoming-img img {
+    width: 100%;
+    height: auto;
+}
+.upcoming-body {
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .UpcomingEvent {
+        width: 70%;
+        margin-bottom: 1em;
+    }
+    .upcoming-body-text {
+        padding-bottom: 1em;
+    }
+    .upcoming-body-text h3 {
+        font-size: 1.1em;
+    }
+    .upcoming-body-text p {
+        font-size: 0.9em;
+    }
+}
+@media (max-width: 450px) {
+    .UpcomingEvent {
+        width: 90%;
+        margin-bottom: 1em;
+    }
+}
