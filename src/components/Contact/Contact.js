@@ -1,14 +1,17 @@
 import React from 'react';
-import MdPhoneAndroid from 'react-icons/lib/md/phone-android';
-import MdLocationOn from 'react-icons/lib/md/location-on';
-import FaFacebook from 'react-icons/lib/fa/facebook-square';
-import FaInstagram from 'react-icons/lib/fa/instagram';
+import { MdPhoneAndroid, MdLocationOn } from 'react-icons/md';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import './Contact.css';
 import {reduxForm, Form} from 'redux-form';
 import {FormInputField, FormTextArea} from './../Form/FormInputs';
 import {empty, minLength, emailFormat} from './../Form/Validator';
 import Spinner from '../BasicComponents/Spinner/Spinner';
 import Divider from '../BasicComponents/Divider/Divider';
+
+const iconStyle = {
+    verticalAlign: "text-bottom",
+    paddingRight: "0.5em"
+};
 
 const Contact = ({handleSubmit, onSubmit, submitting, submitSucceeded}) =>
     <div className="Contact">
@@ -36,11 +39,11 @@ const Contact = ({handleSubmit, onSubmit, submitting, submitSucceeded}) =>
         <div className="contact-info-panel">
             <div className="contact-address">
                 <p>
-                    <MdLocationOn size={22} style={{verticalAlign: "text-bottom", paddingRight: "0.5em"}}/>
+                    <MdLocationOn size={22} style={iconStyle}/>
                     55 Captain Rosemary Road, 5213 Springland
                 </p>
                 <p>
-                    <MdPhoneAndroid size={22} style={{verticalAlign: "text-bottom", paddingRight: "0.5em"}}/>
+                    <MdPhoneAndroid size={22} style={iconStyle}/>
                     +331 9990 0023 8812 6334
                 </p>
             </div>
@@ -49,7 +52,7 @@ const Contact = ({handleSubmit, onSubmit, submitting, submitSucceeded}) =>
                 <p><FaInstagram size={22}/></p>
             </div>
         </div>
-    </div>
+    </div>;
 
 
 const validate = ({email, subject, message}) => {
