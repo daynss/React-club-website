@@ -7,6 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
+import ScrollToTop from './components/App/ScrollToTop';
 
 const reducers = {
     form: formReducer
@@ -19,11 +20,12 @@ const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-
 ReactDOM.render(
     <Provider store={store}>
         <Router>
-            <App/>
+            <ScrollToTop>
+                <App/>
+            </ScrollToTop>
         </Router>
     </Provider>
 , document.getElementById('root'));
