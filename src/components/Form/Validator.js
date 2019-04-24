@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const empty = data => !data;
 
 export const minLength = data => data.length < 2;

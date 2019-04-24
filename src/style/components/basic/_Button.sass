@@ -1,14 +1,11 @@
 .button
-  margin: 0 auto
-  font-size: 1em
-  font-family: 'Questrial', sans-serif
-  padding: 0.5em 1em
-  background-color: #fff
-  border-radius: 2px
-  outline: none
-  border: none
-  cursor: pointer
+  font-size: $font-s
+  background-color: $colorWhite
+  @include centering-margin()
+  @include border(none, 2px)
+  @include vertical-padding(0.5rem)
+  @include horizontal-padding(1rem)
 
   &:hover
-    background-color: #eee
+    background-color: $colorGrey
     font-weight: bold
