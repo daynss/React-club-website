@@ -1,7 +1,6 @@
 import React from 'react';
-import './Divider.css';
 
-const Divider = () =>
-    <div className="divider"></div>;
+const Divider = ({horizontal = false}) =>
+    <div className={horizontal ? "divider-horizontal" : "divider-vertical"}/>;
 
 export default Divider;

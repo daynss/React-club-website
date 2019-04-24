@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import events from '../Data/data';
 import Artist from '../Artists/Artist';
-import './ProgramDetail.css';
-
 
 const ProgramDetail = (props) => {
     const paramsId = parseInt(props.match.params.id, 10);

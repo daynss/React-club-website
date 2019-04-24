@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import './Navbar.css';
-
 
 class Navbar extends Component {
     constructor(props) {
@@ -27,7 +25,7 @@ class Navbar extends Component {
                 linksVisible: false
             });
         }
-    }
+    };
 
     render() {
         return (
@@ -38,9 +36,9 @@ class Navbar extends Component {
                             <NavLink className="nav-link" to="/">Imaginarium Club</NavLink>
                         </div>
                         <div onClick={this.handleClick} className={this.state.menuClassName}>
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                            <span/>
+                            <span/>
+                            <span/>
                         </div>
                     </div>
                     <div className={this.state.linksClassName}>
@@ -55,6 +53,6 @@ class Navbar extends Component {
             </nav>
         );
     }
-};
+}
 
 export default Navbar;

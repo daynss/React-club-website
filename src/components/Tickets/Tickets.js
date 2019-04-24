@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import events from '../Data/data';
-import './Tickets.css';
 
 const Tickets = () => {
     const eventPrices = events.map(evt => (
