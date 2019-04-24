@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import EventCard from './EventCard';
 import events from '../Data/data';
-import './Program.css';
-
 
 class Program extends Component {
     constructor(props) {
@@ -28,6 +26,5 @@ class Program extends Component {
         );
     }
 }
-
 
 export default Program;

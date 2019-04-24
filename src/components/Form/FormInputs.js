@@ -1,6 +1,5 @@
 import React from 'react';
 import { Field } from 'redux-form';
-import './Form.css';
 
 const isError = meta => meta.touched && meta.error;
 

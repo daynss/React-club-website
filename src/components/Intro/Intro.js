@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import events from '../Data/data';
 import UpcomingEvents from '../UpcomingEvents/UpcomingEvents';
-import './Intro.css';
-
 
 const upcoming = events.filter(evt => events.indexOf(evt) < 3 );
 
@@ -18,10 +16,10 @@ class Intro extends Component {
         this.setState({
             upcomingEvents: upcoming
         });
-    }
+    };
 
     render() {
-        const currentEvents = this.state.upcomingEvents.map((evt, idx) => (
+        const currentEvents = this.state.upcomingEvents.map(evt => (
             <UpcomingEvents key={evt.id} order={evt.id}
                 title={evt.title} img={evt.img}
                 day={evt.day} date={evt.date}
@@ -42,16 +40,16 @@ class Intro extends Component {
                         </p>
                     </div>
                 </div>
-                <div className="up-events-overview">
+                <div className="upcoming-events-overview">
                     <h3>Upcoming Events</h3>
-                    <div className="up-events-container">
+                    <div className="upcoming-events-container">
                         {currentEvents}
                     </div>
                 </div>
             </div>
         );
     }
-};
+}
 
 
 export default Intro;

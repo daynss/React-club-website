@@ -1,12 +1,12 @@
 import React from 'react';
 import { MdPhoneAndroid, MdLocationOn } from 'react-icons/md';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
-import './Contact.css';
 import {reduxForm, Form} from 'redux-form';
 import {FormInputField, FormTextArea} from './../Form/FormInputs';
 import {empty, minLength, emailFormat} from './../Form/Validator';
 import Spinner from '../BasicComponents/Spinner/Spinner';
 import Divider from '../BasicComponents/Divider/Divider';
+import Button from '../BasicComponents/Button/Button';
 
 const iconStyle = {
     verticalAlign: "text-bottom",
@@ -31,8 +31,7 @@ const Contact = ({handleSubmit, onSubmit, submitting, submitSucceeded}) =>
 
                     <Divider/>
                     {submitting ? <Spinner/> :
-                        <button className="submit-button"
-                                type="submit">Send</button>}
+                        <Button type="submit" label="Send"/>}
                     <Divider/>
                 </Form>}
         </div>
@@ -47,6 +46,7 @@ const Contact = ({handleSubmit, onSubmit, submitting, submitSucceeded}) =>
                     +331 9990 0023 8812 6334
                 </p>
             </div>
+            <Divider horizontal/>
             <div className="contact-social-media">
                 <p><FaFacebook size={22}/></p>
                 <p><FaInstagram size={22}/></p>

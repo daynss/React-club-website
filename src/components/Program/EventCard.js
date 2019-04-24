@@ -1,8 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Artist from '../Artists/Artist';
-import './EventCard.css';
-
 
 const EventCard = ({
                        order, title, img,
