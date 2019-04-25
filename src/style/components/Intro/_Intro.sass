@@ -1,88 +1,58 @@
 .Intro
   width: 100%
-  margin: 0 auto
-  display: -webkit-box
-  display: -ms-flexbox
-  display: flex
-  -webkit-box-orient: vertical
-  -webkit-box-direction: normal
-  -ms-flex-direction: column
-  flex-direction: column
-  -ms-flex-pack: distribute
-  justify-content: space-around
+  @include centering-margin()
+  @include flexbox()
+  @include flex-direction(column)
+  @include justify-content(space-around)
 
   .intro-wrapper
     width: 90%
     height: 100vh
-    margin: 0 auto 5em
-    position: relative
-    background:
-      image: url("https://preview.ibb.co/httNm7/james_barr_491013_unsplash.jpg")
-      position: 0 0
-      repeat: no-repeat
-      size: cover
-      attachment: fixed
+    @include centering-margin(0, 5rem)
+    @include flexbox()
+    @include flex-direction(column)
+    @include background-image("https://preview.ibb.co/httNm7/james_barr_491013_unsplash.jpg")
+    @include justify-content(center)
 
     .intro-description
-      position: absolute
-      top: 20%
-      left: 0
-      bottom: 0
-      right: 0
-      color: #fff
+      color: $colorWhite
 
       & > p
         width: 60%
-        margin: 2em auto
-        font-size: 1.1em
-        line-height: 1.5em
+        font-size: $font-s
+        line-height: 1.5rem
+        @include centering-margin(2rem)
 
   .upcoming-events-overview
     width: 90%
-    margin: 0 auto
+    @include centering-margin()
 
     .upcoming-events-container
-      display: -webkit-box
-      display: -ms-flexbox
-      display: flex
-      -webkit-box-orient: horizontal
-      -webkit-box-direction: normal
-      -ms-flex-direction: row
-      flex-direction: row
-      -webkit-box-pack: justify
-      -ms-flex-pack: justify
-      justify-content: space-between
+      @include flexbox()
+      @include justify-content(space-between)
 
   @media (max-width: 1100px)
     .intro-description
       p
         width: 80%
-        font-size: 1em
-        line-height: 1.4em
+        font-size: $font-s
+        line-height: $font-l
 
   @media (max-width: 800px)
     .intro-description
       h1
-        font-size: 1.4em
+        font-size: $font-l
       h3
-        font-size: 1em
+        font-size: $font-s
       p
-        font-size: 0.9em
-        line-height: 1.3em
+        font-size: $font-xs
+        line-height: 1.3rem
         text-align: center
 
     .upcoming-events-overview
       .upcoming-events-container
-        display: -webkit-box
-        display: -ms-flexbox
-        display: flex
-        -webkit-box-orient: vertical
-        -webkit-box-direction: normal
-        -ms-flex-direction: column
-        flex-direction: column
-        -webkit-box-align: center
-        -ms-flex-align: center
-        align-items: center
-
+        @include flexbox()
+        @include flex-direction(column)
+        @include align-items(center)
 
 

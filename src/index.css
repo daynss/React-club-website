@@ -53,6 +53,8 @@
 }
 
 .contact-wrapper {
+  width: 90%;
+  height: 100vh;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -67,8 +69,6 @@
   -moz-align-items: center;
   -ms-align-items: center;
   align-items: center;
-  width: 90%;
-  height: 100vh;
   margin: 0 auto 5em;
   background-image: url("https://preview.ibb.co/g5Gk8n/marcus_neto_96651_unsplash.jpg");
   background-position: right top;
@@ -91,7 +91,7 @@
 }
 .contact-form-success .contact-form-success-message {
   color: #fff;
-  font-size: 1.6em;
+  font-size: 1.6rem;
 }
 
 .contact-info-panel {
@@ -110,146 +110,163 @@
   -ms-flex-pack: space-between;
 }
 
-@media (max-width: 1000px) {
-  .contact-form {
-    width: 70%;
-  }
-
-  .contact-info {
-    width: 70%;
-  }
-}
-@media (max-width: 590px) {
-  .contact-form {
-    font-size: 0.9em;
-    width: 85%;
-  }
-
-  .contact-info {
-    font-size: 0.9em;
-    text-align: center;
-    -webkit-flex-direction: column;
-    -moz-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-}
 .Footer {
   height: 5em;
-  background-color: #ececec;
+  background-color: #eeeeee;
   margin-top: 5em;
 }
 .Footer > p {
-  padding-top: 3em;
+  padding-top: 3rem;
+  padding-bottom: 0;
 }
 
 .form-item {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
 }
+.form-item > input, .form-item textarea {
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 .form-item .form-item-header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
   justify-content: space-between;
+  -ms-flex-pack: space-between;
+  -webkit-align-items: baseline;
+  -moz-align-items: baseline;
+  -ms-align-items: baseline;
   align-items: baseline;
 }
 .form-item .form-item-header .form-item-label {
-  color: #fff;
+  color: #ffffff;
   text-align: left;
-  padding-top: 1em;
+  padding-top: 1rem;
+  padding-bottom: 0;
+}
+.form-item .form-item-header .form-field-error {
+  color: #FF5F59;
 }
 .form-item .invalid-form-input {
-  border: 1px solid red;
-}
-.form-item .form-field-error {
-  color: red;
+  border: 1px solid #FF5F59;
+  border-radius: 2px;
 }
 
 .Intro {
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 0;
   display: -webkit-box;
+  display: -moz-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
   justify-content: space-around;
+  -ms-flex-pack: space-around;
 }
 .Intro .intro-wrapper {
   width: 90%;
   height: 100vh;
-  margin: 0 auto 5em;
-  position: relative;
+  margin: 0 auto 5rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   background-image: url("https://preview.ibb.co/httNm7/james_barr_491013_unsplash.jpg");
-  background-position: 0 0;
+  background-position: right top;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
 }
 .Intro .intro-wrapper .intro-description {
-  position: absolute;
-  top: 20%;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  color: #fff;
+  color: #ffffff;
 }
 .Intro .intro-wrapper .intro-description > p {
   width: 60%;
-  margin: 2em auto;
-  font-size: 1.1em;
-  line-height: 1.5em;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 2rem auto 0;
 }
 .Intro .upcoming-events-overview {
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 0;
 }
 .Intro .upcoming-events-overview .upcoming-events-container {
   display: -webkit-box;
+  display: -moz-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
   justify-content: space-between;
+  -ms-flex-pack: space-between;
 }
 @media (max-width: 1100px) {
   .Intro .intro-description p {
     width: 80%;
-    font-size: 1em;
-    line-height: 1.4em;
+    font-size: 1rem;
+    line-height: 1.4rem;
   }
 }
 @media (max-width: 800px) {
   .Intro .intro-description h1 {
-    font-size: 1.4em;
+    font-size: 1.4rem;
   }
   .Intro .intro-description h3 {
-    font-size: 1em;
+    font-size: 1rem;
   }
   .Intro .intro-description p {
-    font-size: 0.9em;
-    line-height: 1.3em;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
     text-align: center;
   }
   .Intro .upcoming-events-overview .upcoming-events-container {
     display: -webkit-box;
+    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
     align-items: center;
   }
 }
@@ -415,21 +432,17 @@
 
 .Event-card {
   display: -webkit-box;
+  display: -moz-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  margin: 0 auto;
+  margin: 0 auto 0;
   width: 85%;
-  height: 20em;
+  height: 20rem;
 }
 .Event-card:nth-child(1) {
-  padding-top: 6em;
-}
-.Event-card:last-child {
-  padding-bottom: 6em;
+  padding-top: 6rem;
+  padding-bottom: 0;
 }
 .Event-card .event-image {
   width: 65%;
@@ -450,7 +463,10 @@
 }
 .Event-card .event-content {
   width: 35%;
-  padding: 2em 1em;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   position: relative;
   top: 0;
   left: 0;
@@ -500,8 +516,14 @@
   position: absolute;
   top: 0;
   left: -25%;
+  -moz-transform: skewX(12deg);
+  -o-transform: skewX(12deg);
+  -ms-transform: skewX(12deg);
   -webkit-transform: skewX(12deg);
   transform: skewX(12deg);
+  -moz-transform-origin: top left;
+  -o-transform-origin: top left;
+  -ms-transform-origin: top left;
   -webkit-transform-origin: top left;
   transform-origin: top left;
   z-index: 3;
@@ -841,6 +863,61 @@
   .Tickets .tickets-events table td {
     white-space: nowrap;
     font-size: 0.8em;
+  }
+}
+
+.UpcomingEvent {
+  width: 30%;
+  background-color: #FFFBFC;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  border: 1px solid #eeeeee;
+  border-radius: 0;
+}
+.UpcomingEvent .upcoming-img {
+  width: 100%;
+  height: 12rem;
+  overflow: hidden;
+}
+.UpcomingEvent .upcoming-img img {
+  width: 100%;
+  height: auto;
+}
+.UpcomingEvent .upcoming-body {
+  width: 100%;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  .UpcomingEvent {
+    width: 70%;
+    margin-bottom: 1rem;
+  }
+  .UpcomingEvent .upcoming-body .upcoming-body-text {
+    padding-top: 0;
+    padding-bottom: 1rem;
+  }
+  .UpcomingEvent .upcoming-body .upcoming-body-text h3 {
+    font-size: 1rem;
+  }
+  .UpcomingEvent .upcoming-body .upcoming-body-text p {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 450px) {
+  .UpcomingEvent {
+    width: 90%;
+    margin-bottom: 1rem;
   }
 }
 

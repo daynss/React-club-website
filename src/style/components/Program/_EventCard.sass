@@ -1,20 +1,11 @@
 .Event-card
-  display: -webkit-box
-  display: -ms-flexbox
-  display: flex
-  -webkit-box-orient: horizontal
-  -webkit-box-direction: normal
-  -ms-flex-direction: row
-  flex-direction: row
-  margin: 0 auto
+  @include flexbox()
+  @include centering-margin()
   width: 85%
-  height: 20em
+  height: 20rem
 
   &:nth-child(1)
-    padding-top: 6em
-
-  &:last-child
-    padding-bottom: 6em
+    @include vertical-padding(6rem, 0)
 
   .event-image
     width: 65%
@@ -33,7 +24,8 @@
 
   .event-content
     width: 35%
-    padding: 2em 1em
+    @include vertical-padding(2rem)
+    @include horizontal-padding(1rem)
     position: relative
     top: 0
     left: 0
@@ -82,10 +74,8 @@
         position: absolute
         top: 0
         left: -25%
-        -webkit-transform: skewX(12deg)
-        transform: skewX(12deg)
-        -webkit-transform-origin: top left
-        transform-origin: top left
+        @include transform(skewX(12deg))
+        @include transform-origin(top left)
         z-index: 3
         border-left: 2px solid #ececec
         border-bottom: 1px solid #ececec

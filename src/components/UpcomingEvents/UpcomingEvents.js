@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './UpcomingEvents.css';
 
 const UpcomingEvents = (props) => {
     const { title, order, img, day, date } = props;
