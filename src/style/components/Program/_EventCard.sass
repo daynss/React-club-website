@@ -4,15 +4,15 @@
   width: 85%
   height: 20rem
 
-  &:nth-child(1)
-    @include vertical-padding(6rem, 0)
+  &:nth-of-type(1)
+    @include side-border(1px solid $colorLightGrey, none, none, none)
 
   .event-image
     width: 65%
     height: auto
     overflow: hidden
-    border-top: 1px solid #ececec
-    border-bottom: 1px solid #ececec
+    @include side-border(none, none, 1px solid $colorLightGrey, 1px solid $colorLightGrey)
+
     img
       width: 100%
       height: auto
@@ -24,16 +24,15 @@
 
   .event-content
     width: 35%
+    @include box-sizing(border-box)
     @include vertical-padding(2rem)
     @include horizontal-padding(1rem)
     position: relative
     top: 0
     left: 0
     z-index: 10
-    background-color: #FFFBFC
-    border-top: 1px solid #ececec
-    border-right: 2px solid #ececec
-    border-bottom: 1px solid #ececec
+    background-color: $colorGrey
+    @include side-border(none, 1px solid $colorLightGrey, 1px solid $colorLightGrey, none)
 
     ul > span
       margin-right: 2%
@@ -57,14 +56,12 @@
         position: absolute
         top: 0
         left: -25%
-        -webkit-transform: skewX(-12deg)
-        transform: skewX(-12deg)
-        -webkit-transform-origin: left bottom
-        transform-origin: left bottom
         z-index: 3
-        border-left: 2px solid #ececec
-        border-bottom: 1px solid #ececec
-        background-color: #FFFBFC
+        background-color: $colorGrey
+        @include box-sizing(border-box)
+        @include transform(skewX(-12deg))
+        @include transform-origin(left bottom)
+        @include side-border(none, none, none, 1px solid $colorLightGrey)
 
     &.odd
       &::after
@@ -74,27 +71,26 @@
         position: absolute
         top: 0
         left: -25%
+        z-index: 3
+        background-color: $colorGrey
         @include transform(skewX(12deg))
         @include transform-origin(top left)
-        z-index: 3
-        border-left: 2px solid #ececec
-        border-bottom: 1px solid #ececec
-        background-color: #FFFBFC
+        @include side-border(none, none, none, 1px solid $colorLightGrey)
+
 
   @media (max-width: 1100px)
     width: 95%
 
     .event-content
       h2
-        font-size: 1.3em
+        font-size: $font-m
       h3
-        font-size: 1.1em
+        font-size: $font-s
       p,
       ul
-        font-size: 0.9em
+        font-size: $font-s
 
   @media (max-width: 840px)
-    width: 95%
     height: 14em
 
     .event-image
@@ -102,38 +98,34 @@
 
     .event-content
       width: 45%
-      padding: 0 0 1.5em
-
+      @include vertical-padding(0, 1.5rem)
       p
-        margin: 0.5em 0
+        margin: 0.5rem 0
 
   @media (max-width: 650px)
-    -webkit-box-orient: vertical
-    -webkit-box-direction: normal
-    -ms-flex-direction: column
-    flex-direction: column
+    @include flex-direction(column)
     width: 80%
     height: auto
-    border: 1px solid #ececec
-    margin-bottom: 2em
-
-    &:last-child
-      padding-bottom: 0
+    @include border(1px solid $colorLightGrey)
+    margin-bottom: 2rem
+    &:nth-of-type(1)
+      @include border(1px solid $colorLightGrey)
 
     .event-image
       width: 100%
-      height: auto
-      border: none
+      height: 100%
+      @include border(none)
+      @include side-border(none, none, 1px solid $colorLightGrey, none)
+      font-size: 0px
+
       img
         width: 100%
         height: 100%
 
     .event-content
-      -webkit-box-sizing: border-box
-      box-sizing: border-box
       width: 100%
-      padding: 1em 1em 2em
-      border: none
+      @include vertical-padding(1rem, 2rem)
+      @include border(none)
 
       &.odd
         &::after

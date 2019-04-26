@@ -13,6 +13,13 @@
   border: $border
   border-radius: $radius
 
+@mixin side-border($top, $right, $bottom, $left)
+  border:
+    top: $top
+    right: $right
+    bottom: $bottom
+    left: $left
+
 @mixin primary-font
   font-family: 'Questrial', sans-serif
 
@@ -63,3 +70,8 @@
   -ms-transform-origin: $origin
   -webkit-transform-origin: $origin
   transform-origin: $origin
+
+@mixin box-sizing($box-model)
+  -webkit-box-sizing: $box-model
+  -moz-box-sizing: $box-model
+  box-sizing: $box-model
