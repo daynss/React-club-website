@@ -2,18 +2,13 @@
   padding-top: 6em
 
 .contact-wrapper
-  display: flex
-  justify-content: center
-  align-items: center
   width: 90%
   height: 100vh
-  margin: 0 auto 5em
-  background:
-    image: url("https://preview.ibb.co/g5Gk8n/marcus_neto_96651_unsplash.jpg")
-    position: right top
-    repeat: no-repeat
-    size: cover
-    attachment: fixed
+  @include flexbox()
+  @include justify-content(center)
+  @include align-items(center)
+  @include centering-margin(0, 5em)
+  @include background-image("https://preview.ibb.co/g5Gk8n/marcus_neto_96651_unsplash.jpg")
 
 .contact-form
   width: 50%
@@ -26,37 +21,28 @@
   width: 40%
   .contact-form-success-message
     color: #fff
-    font-size: 1.6em
+    font-size: $font-xl
 
 .contact-info-panel
     width: 50%
     text-align: left
-    margin: 0 auto
-    display: -webkit-box
-    display: -ms-flexbox
-    display: flex
-    -webkit-box-orient: horizontal
-    -webkit-box-direction: normal
-    -ms-flex-direction: row
-    flex-direction: row
-    -webkit-box-pack: justify
-    -ms-flex-pack: justify
-    justify-content: space-between
+    @include centering-margin()
+    @include flexbox()
+    @include justify-content(space-between)
 
-@media (max-width: 1000px)
-  .contact-form
-    width: 70%
-  .contact-info
-    width: 70%
-
-@media (max-width: 590px)
-  .contact-form
-    font-size: 0.9em
-    width: 85%
-  .contact-info
-    font-size: 0.9em
-    -webkit-box-orient: vertical
-    -webkit-box-direction: normal
-    -ms-flex-direction: column
-    flex-direction: column
-    text-align: center
+//@media (max-width: 1000px)
+//  .contact-wrapper
+//    .contact-form
+//      width: 70%
+//    .contact-info-panel
+//      width: 70%
+//
+//@media (max-width: 590px)
+//  .contact-wrapper
+//    .contact-form
+//      font-size: $font-xs
+//      width: 85%
+//  .contact-info-panel
+//    font-size: $font-xs
+//    text-align: center
+//    @include flex-direction(column)

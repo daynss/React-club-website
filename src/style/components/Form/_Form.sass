@@ -1,22 +1,26 @@
 .form-item
-  display: flex
-  -webkit-box-orient: vertical
-  -webkit-box-direction: normal
-  -ms-flex-direction: column
-  flex-direction: column
+  @include flexbox()
+  @include flex-direction(column)
+
+  > input,textarea
+    outline: none
+    @include border(none, 2px)
+    @include horizontal-padding(5px)
 
   .form-item-header
-    display: flex
-    justify-content: space-between
-    align-items: baseline
+    @include flexbox()
+    @include justify-content(space-between)
+    @include align-items(baseline)
 
     .form-item-label
-      color: #fff
+      color: $colorWhite
       text-align: left
-      padding-top: 1em
+      @include vertical-padding(1rem, 0)
+
+    .form-field-error
+      color: $colorRed
 
   .invalid-form-input
-    border: 1px solid red
+    @include border(1px solid $colorRed, 2px)
 
-  .form-field-error
-    color: red
+

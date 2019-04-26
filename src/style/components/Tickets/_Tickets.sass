@@ -4,43 +4,37 @@
   .tickets-header
     width: 90%
     height: 100vh
-    margin: 0 auto
-    background:
-      image: url("https://preview.ibb.co/mGrgw7/oscar_keys_58399_unsplash.jpg")
-      position: 0 0
-      repeat: no-repeat
-      size: cover
-      attachment: fixed
-    position: relative
+    @include centering-margin()
+    @include background-image("https://preview.ibb.co/mGrgw7/oscar_keys_58399_unsplash.jpg")
+    @include flexbox()
+    @include flex-direction(column)
 
     .tickets-info
-      position: absolute
-      top: 20%
-      left: 0
-      right: 0
-      bottom: 0
-      color: #fff
-      font-size: 1.1em
-      line-height: 1.5em
+      margin-top: 10rem
+      color: $colorWhite
+      font-size: $font-m
+      line-height: 1.5rem
       h1
-        margin-bottom: 1.5em
+        margin-bottom: 1.5rem
+        font-size: 2rem
       p
         margin: 0
       @media (max-width: 700px)
-        font-size: 0.9em
-        padding: 0 1em
+        font-size: $font-xs
+        @include vertical-padding(0)
+        @include horizontal-padding(1rem)
 
   .tickets-events
     h3
-      margin: 4em 0
+      margin: 4rem 0
       text-align: center
     table
       width: 40%
-      margin: 2em auto
-      line-height: 1.5em
+      line-height: 1.5rem
       text-align: left
+      @include centering-margin(2em)
       th
-        font-size: 1.1em
+        font-size: $font-m
       td
         width: 50%
 
@@ -48,7 +42,7 @@
       table
         width: 70%
         h3
-          margin: 4em 0 1em
+          margin: 4rem 0 1rem
           text-align: center
 
     @media (max-width: 700px)
@@ -58,8 +52,8 @@
     @media (max-width: 450px)
       table th
         white-space: nowrap
-        font-size: 0.9em
+        font-size: $font-s
       table td
         white-space: nowrap
-        font-size: 0.8em
+        font-size: $font-xs
 
