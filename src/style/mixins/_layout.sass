@@ -9,20 +9,6 @@
   padding-top: $top
   padding-bottom: $bottom
 
-@mixin border($border, $radius: 0)
-  border: $border
-  border-radius: $radius
-
-@mixin side-border($top, $right, $bottom, $left)
-  border:
-    top: $top
-    right: $right
-    bottom: $bottom
-    left: $left
-
-@mixin primary-font
-  font-family: 'Questrial', sans-serif
-
 @mixin flexbox
   display: -webkit-box
   display: -moz-box
@@ -49,27 +35,11 @@
   -ms-flex-direction: $direction
   flex-direction: $direction
 
-@mixin background-image($url)
-  background:
-    image: url($url)
-    position: right top
-    repeat: no-repeat
-    size: cover
-    attachment: fixed
-
-@mixin transform($transforms)
-  -moz-transform: $transforms
-  -o-transform: $transforms
-  -ms-transform: $transforms
-  -webkit-transform: $transforms
-  transform: $transforms
-
-@mixin transform-origin ($origin)
-  -moz-transform-origin: $origin
-  -o-transform-origin: $origin
-  -ms-transform-origin: $origin
-  -webkit-transform-origin: $origin
-  transform-origin: $origin
+@mixin flex-wrap($wrap)
+  -webkit-flex-wrap: $wrap
+  -moz-flex-wrap: $wrap
+  -ms-flex-wrap: $wrap
+  flex-wrap: $wrap
 
 @mixin box-sizing($box-model)
   -webkit-box-sizing: $box-model

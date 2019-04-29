@@ -16,12 +16,24 @@
 
     .intro-description
       color: $colorWhite
-
+      width: 70%
+      text-align: center
+      @include centering-margin()
       & > p
-        width: 60%
         font-size: $font-s
         line-height: 1.5rem
-        @include centering-margin(2rem)
+
+      @include breakpoint(l)
+        & > p
+          line-height: $font-l
+
+      @include breakpoint(m)
+        h1
+          font-size: $font-l
+        h3
+          font-size: $font-s
+        p
+          font-size: $font-xs
 
   .upcoming-events-overview
     width: 90%
@@ -31,28 +43,11 @@
       @include flexbox()
       @include justify-content(space-between)
 
-  @media (max-width: 1100px)
-    .intro-description
-      p
-        width: 80%
-        font-size: $font-s
-        line-height: $font-l
-
-  @media (max-width: 800px)
-    .intro-description
-      h1
-        font-size: $font-l
-      h3
-        font-size: $font-s
-      p
-        font-size: $font-xs
-        line-height: 1.3rem
-        text-align: center
-
-    .upcoming-events-overview
-      .upcoming-events-container
-        @include flexbox()
+      @include breakpoint(m)
+        width: 70%
+        @include centering-margin()
         @include flex-direction(column)
         @include align-items(center)
 
-
+      @include breakpoint(s)
+        width: 95%

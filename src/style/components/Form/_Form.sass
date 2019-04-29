@@ -19,6 +19,8 @@
 
     .form-field-error
       color: $colorRed
+    @include breakpoint(m)
+      font-size: $font-xs
 
   .invalid-form-input
     @include border(1px solid $colorRed, 2px)

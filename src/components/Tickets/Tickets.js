@@ -16,6 +16,7 @@ const Tickets = () => {
             </td>
         </tr>
     ));
+
     return (
         <div className="Tickets">
             <div className="tickets-header">
@@ -28,12 +29,11 @@ const Tickets = () => {
             <div className="tickets-events">
                 <h3>Entry prices for the upcoming events</h3>
                 <h4>August 2018</h4>
+                <div className="tickets-events-table">
+
+                </div>
                 <table>
                     <tbody>
-                        <tr>
-                            <th>Event</th>
-                            <th>Entry Price</th>
-                        </tr>
                         {eventPrices}
                     </tbody>
                 </table>
