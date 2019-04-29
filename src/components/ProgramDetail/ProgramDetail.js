@@ -46,7 +46,7 @@ const ProgramDetail = props => {
                                         <Artist artist={event.artist} category={event.category} />
                                     </div>
                                     <Link to={`/detail/${event.id}`}>
-                                        <p id="link-more">Read more</p>
+                                        <p className="detail-link">Read more</p>
                                     </Link>
                                 </div>
                             );

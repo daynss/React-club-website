@@ -18,12 +18,8 @@ const Contact = ({handleSubmit, onSubmit, submitting, submitSucceeded}) =>
         <div className="contact-wrapper">
             {submitSucceeded ?
                 <div className="contact-form-success">
-                    <p className="contact-form-success-message">
-                        Thank you for your message!
-                    </p>
-                    <p className="contact-form-success-message">
-                        We will get in touch soon.
-                    </p>
+                    <p>Thank you for your message!</p>
+                    <p>We will get in touch soon.</p>
                 </div> : <Form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
                     <FormInputField name="email" type="email" label="Email"/>
                     <FormInputField name="subject" type="text" label="Subject"/>

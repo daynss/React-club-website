@@ -1,0 +1,12 @@
+@mixin breakpoint($point)
+  @if $point == l
+    @media(max-width: 1100px)
+      @content
+
+  @else if $point == m
+    @media(max-width: 760px)
+      @content
+
+  @else if $point == s
+    @media(max-width: 480px)
+      @content

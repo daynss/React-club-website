@@ -28,7 +28,7 @@ const EventCard = ({
                     {entry} {entry === "free" ? null : <span>&euro;</span>}
                 </p>
                 <Link to={`/detail/${order}`}>
-                    <p>Read more</p>
+                    <p className="detail-link">Read more</p>
                 </Link>
             </div>
         </div>

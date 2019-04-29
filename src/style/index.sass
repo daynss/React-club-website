@@ -1,5 +1,6 @@
 @import '_variables.sass'
-@import '_mixins.sass'
+@import 'mixins/_index.sass'
+@import 'mixins/breakpoints'
 @import 'components/_index.sass'
 
 html
@@ -25,3 +26,10 @@ button
   cursor: pointer
   outline: none
   @include primary-font()
+
+a
+  text-decoration: none
+  color: $colorBlack
+  cursor: pointer
+  &:hover
+    opacity: 0.5

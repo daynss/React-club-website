@@ -34,9 +34,7 @@ class Intro extends Component {
                         <h3>Your favourite venue for gigs, parties, and gatherings.</h3>
                         <p>
                             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                            eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
-                            ratione voluptatem sequi nesciunt.
+                            eaque ipsa quae ab illo inventore veritatis.
                         </p>
                     </div>
                 </div>
