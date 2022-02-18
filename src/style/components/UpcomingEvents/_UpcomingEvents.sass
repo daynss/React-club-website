@@ -1,10 +1,26 @@
-.UpcomingEvent
-  width: 30%
-  background-color: $colorGrey
+.UpcomingEvents
+  width: 90%
+  @include centering-margin()
   @include flexbox()
-  @include flex-direction(column)
-  @include align-items(center)
-  @include border(1px solid $colorLightGrey)
+
+  @include breakpoint(m)
+    width: 70%
+    @include centering-margin()
+    @include flex-direction(column)
+    @include align-items(center)
+
+  @include breakpoint(s)
+    width: 95%
+
+  .UpcomingEvent
+    width: 30%
+    background-color: $colorGrey
+    @include flexbox()
+    @include flex-direction(column)
+    @include align-items(center)
+    @include border(1px solid $colorLightGrey)
+    &:not(:last-child)
+      margin-right: 5%
 
   .upcoming-img
     width: 100%
@@ -16,6 +32,13 @@
   .upcoming-body
     width: 100%
     text-align: center
+
+  .detail-link
+    @include vertical-padding(2rem, 0)
+    color: blue
+    &:hover
+      opacity: 0.6
+      cursor: pointer
 
   @include breakpoint(m)
     width: 100%

@@ -1,34 +1,31 @@
-import React from 'react';
+import React from "react";
 
 const Artist = (props) => {
-    let artistType = null;
-    const artists = props.artist.map((artist, idx) =>
-        <li key={idx}>{artist}</li>
-    );
+  let artistType = null;
+  const artists =
+    props.artist &&
+    props.artist.map((artist, idx) => <li key={idx}>{artist}</li>);
 
-    switch (props.category) {
-        case 'Hump Day Readings':
-            artistType = 'Author:';
-            break;
-        case 'Deserved Friday Party':
-            artistType = 'DJs:';
-            break;
-        case 'Saturday Night Concert':
-            artistType = 'Bands:';
-            break;
-        case 'Sunday Talk & Learn Session':
-            artistType = 'Host:';
-            break;
-            
-        // no default
-    }
+  switch (props.category) {
+    case "friday_party":
+      artistType = "DJs:";
+      break;
+    case "saturday_concert":
+      artistType = "Bands:";
+      break;
+    case "learning_session":
+      artistType = "Host:";
+      break;
 
-    return (
-        <ul>
-            <span>{artistType}</span>
-            {artists}
-        </ul>
-    );
-}
+    // no default
+  }
+
+  return (
+    <ul>
+      <span>{artistType}</span>
+      {artists}
+    </ul>
+  );
+};
 
 export default Artist;

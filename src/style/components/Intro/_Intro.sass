@@ -34,20 +34,3 @@
           font-size: $font-s
         p
           font-size: $font-xs
-
-  .upcoming-events-overview
-    width: 90%
-    @include centering-margin()
-
-    .upcoming-events-container
-      @include flexbox()
-      @include justify-content(space-between)
-
-      @include breakpoint(m)
-        width: 70%
-        @include centering-margin()
-        @include flex-direction(column)
-        @include align-items(center)
-
-      @include breakpoint(s)
-        width: 95%
