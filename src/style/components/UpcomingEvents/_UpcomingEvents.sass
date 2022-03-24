@@ -22,37 +22,43 @@
     &:not(:last-child)
       margin-right: 5%
 
-  .upcoming-img
-    width: 100%
-    overflow: hidden
-    img
+    .upcoming-img
       width: 100%
-      height: auto
+      overflow: hidden
+      img
+        width: 100%
+        height: auto
 
-  .upcoming-body
-    width: 100%
-    text-align: center
-
-  .detail-link
-    @include vertical-padding(2rem, 0)
-    color: blue
-    &:hover
-      opacity: 0.6
-      cursor: pointer
-
-  @include breakpoint(m)
-    width: 100%
-    margin-bottom: 1.5rem
+    h3
+      font-size: $font-s
+    p
+      font-size: $font-xs
     .upcoming-body
-      padding-bottom: 1rem
-      .upcoming-body-text
-        h3
-          font-size: $font-s
-        p
-          font-size: $font-xs
+      width: 100%
+      text-align: center
 
-  @include breakpoint(s)
-    .upcoming-body
-      .upcoming-body-text
-        h3
-          font-size: $font-xs
+    .detail-link
+      @include vertical-padding(2rem, 0)
+      color: blue
+      &:hover
+        opacity: 0.6
+        cursor: pointer
+
+    @include breakpoint(m)
+      width: 100%
+      margin-bottom: 1.5rem
+      &:not(:last-child)
+        margin-right: 0
+      .upcoming-body
+        padding-bottom: 1rem
+        .upcoming-body-text
+          h3
+            font-size: $font-s
+          p
+            font-size: $font-xs
+
+    @include breakpoint(s)
+      .upcoming-body
+        .upcoming-body-text
+          h3
+            font-size: $font-xs

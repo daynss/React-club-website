@@ -1,38 +1,55 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import Artist from "../Artists/Artist";
+import { MdShoppingCart } from "react-icons/md";
+import Button from "../BasicComponents/Button/Button";
+import Divider from "../BasicComponents/Divider/Divider";
+import { addItemToCart } from "../../redux/Cart/cartActions";
 
-const EventCard = ({
-  order,
-  title,
-  img,
-  day,
-  date,
-  time,
-  artists,
-  category_id,
-}) => (
-  <div className="Event-card">
-    <div className={`event-image ${img ? "" : "empty"}`}>
-      {category_id !== "private_event" && (
-        <Link to={`/detail/${order}`}>
-          <img src={img} alt={title} />
-        </Link>
-      )}
-    </div>
-    <div className={`event-content ${order % 2 !== 0 ? "odd" : "even"}`}>
-      <p>
-        {day}, {date} at {time}{" "}
-      </p>
-      <h2>{title}</h2>
-      <Artist category={category_id} artist={artists} />
-      {category_id !== "private_event" && (
-        <Link to={`/detail/${order}`}>
-          <p className="detail-link">Read more</p>
-        </Link>
-      )}
-    </div>
-  </div>
-);
+const EventCard = ({ key, order, evt, addItemToCart }) => {
+  const { title, img, day, date, time, entry, category_id } = evt;
 
-export default EventCard;
+  return (
+    <div className="Event-card">
+      <div className={`event-image ${img ? "" : "empty"}`}>
+        {category_id !== "private_event" && (
+          <Link to={`/detail/${order}`}>
+            <img src={img} alt={title} />
+          </Link>
+        )}
+      </div>
+      <div className={`event-content`}>
+        <h2>{title}</h2>
+        <div>
+          <span>
+            {day}, {date} {time ? "at " + time : " "}
+          </span>
+          <Divider />
+          {entry === "free" && <span>Entry: free</span>}
+          {entry && entry !== "free" && <span>Entry: {entry}&euro; </span>}
+          <Divider />
+          {category_id !== "private_event" && (
+            <Link to={`/detail/${order}`}>
+              <span className="detail-link">Read more</span>
+            </Link>
+          )}
+        </div>
+        {category_id !== "private_event" && entry !== "free" && (
+          <div className="event-content-button-wrapper">
+            <Button
+              label={"Add to Cart"}
+              renderIcon={<MdShoppingCart size={22} />}
+              onClick={() => addItemToCart(evt.id)}
+            />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  addItemToCart: (itemId) => dispatch(addItemToCart(itemId)),
+});
+
+export default connect(null, mapDispatchToProps)(EventCard);

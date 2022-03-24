@@ -3,6 +3,8 @@
   width: 100%
   position: fixed
   z-index: 9999
+  top: 0
+  left: 0
 
   .navbar-container
     width: 90%
@@ -23,27 +25,43 @@
         width: 100%
         text-align: left
 
-      .menu-icon
-        display: none
-        width: 2rem
-        cursor: pointer
-        &:hover
-          opacity: 0.5
+      .nav-icons
+        display: flex
 
-        span
-          width: 100%
-          height: 0.2rem
-          display: block
-          background: $colorBlack
-          margin: 0.3rem 0
-          @include transition(0.5s)
+        .checkout-link
+          display: none
+          span
+            font-size: 1.5rem
+            padding-left: 0.25rem
+            font-weight: bold
+            color: $colorRed
+          svg
+            color: $colorRed
+            width: 1.75rem
+            height: 1.75rem
 
-        &.cross
-          span:nth-of-type(1)
-            @include transform(rotateY(90deg))
+        .menu-icon
+          display: none
+          width: 2rem
+          cursor: pointer
+          margin-left: 1rem
+          &:hover
+            opacity: 0.5
 
-          span:nth-of-type(3)
-            @include transform(rotateY(-90deg))
+          span
+            width: 100%
+            height: 0.2rem
+            display: block
+            background: $colorBlack
+            margin: 0.3rem 0
+            @include transition(0.5s)
+
+          &.cross
+            span:nth-of-type(1)
+              @include transform(rotateY(90deg))
+
+            span:nth-of-type(3)
+              @include transform(rotateY(-90deg))
 
     .navbar-links
       width: 60%
@@ -63,12 +81,22 @@
           @include vertical-padding(1.5rem)
           &:hover
             cursor: pointer
-            font-weight: bold
 
       .nav-link
         color: $colorBlack
         &.active
           font-weight: bold
+        &.checkout-link
+          @include flexbox()
+          @include justify-content(flex-end)
+          span
+            padding-left: 0.25rem
+            font-weight: bold
+            color: $colorRed
+          svg
+            color: $colorRed
+            width: 1.5rem
+            height: 1.5rem
 
   @include breakpoint(m)
     @include vertical-padding(1rem, 0)
@@ -82,8 +110,12 @@
           width: 20%
           text-align: left
           font-size: $font-m
-        .menu-icon
-          display: block
+        .nav-icons
+          .checkout-link
+            @include flexbox()
+            @include justify-content(flex-end)
+          .menu-icon
+            display: block
 
       .navbar-links
         width: 100%
@@ -103,5 +135,5 @@
             @include vertical-padding(0.5rem)
             &:last-child
               @include vertical-padding(0.5rem, 1rem)
-
-
+        .nav-link.checkout-link
+          display: none

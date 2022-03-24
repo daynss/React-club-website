@@ -1,14 +1,17 @@
 .button
   font-size: $font-s
-  background-color: $colorWhite
-  @include centering-margin()
-  // @include border(none, 2px)
-  @include vertical-padding(0.5rem)
+  color: $colorWhite
+  background-color: $colorGreen
+  @include flexbox()
+  @include border(none, 2px)
+  @include vertical-padding(0.85rem, 0.5rem)
   @include horizontal-padding(1rem)
 
-  &:hover
-    background-color: $colorLightGrey
-    font-weight: bold
+  span
+    padding-right: 0.5rem
 
-  @include breakpoint(m)
+  &:hover
+    opacity: 0.8
+
+  @include breakpoint(l)
     font-size: $font-xs

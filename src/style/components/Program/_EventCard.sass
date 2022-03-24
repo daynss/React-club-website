@@ -1,6 +1,6 @@
 .Event-card
   @include flexbox()
-  @include centering-margin()
+  @include centering-margin(2rem, 2rem)
   width: 85%
   height: 20rem
 
@@ -8,13 +8,14 @@
     @include side-border(1px solid $colorLightGrey, none, none, none)
 
   .event-image
-    width: 65%
+    width: 50%
     height: auto
     overflow: hidden
     @include side-border(none, none, 1px solid $colorLightGrey, 1px solid $colorLightGrey)
 
     &.empty
       background-color: $colorBlack
+      min-height: 15rem
 
     img
       width: 100%
@@ -26,11 +27,11 @@
         opacity: 1
 
   .event-content
-    text-align: center
-    width: 35%
+    text-align: left
+    width: 50%
     @include box-sizing(border-box)
     @include vertical-padding(1rem)
-    @include horizontal-padding(1rem)
+    @include horizontal-padding(2rem, 1rem)
     position: relative
     top: 0
     left: 0
@@ -38,79 +39,37 @@
     background-color: $colorGrey
     @include side-border(none, 1px solid $colorLightGrey, 1px solid $colorLightGrey, none)
 
-    ul > span
-      margin-right: 2%
-    ul > li
-      display: inline-block
-      margin-right: 2%
-      &:not(:last-of-type)::after
-        content: ', '
-    p,
-    h2,
-    ul
-      z-index: 4
-      position: relative
-
     h2
-      @include vertical-padding(1rem, 0)
-      margin-bottom: 0.5rem
+      margin-top: 1rem
+      color: black
+      font-size: 1.2rem
 
     .detail-link
-      @include vertical-padding(2rem, 0)
       color: blue
       &:hover
         opacity: 0.6
         cursor: pointer
 
-    &.even
-      &::after
-        content: ''
-        width: 90%
-        height: 100%
-        position: absolute
-        top: 0
-        left: -25%
-        z-index: 3
-        background-color: $colorGrey
-        @include box-sizing(border-box)
-        @include transform(skewX(-12deg))
-        @include transform-origin(left bottom)
-        @include side-border(none, none, none, 1px solid $colorLightGrey)
-
-    &.odd
-      &::after
-        content: ''
-        width: 90%
-        height: 100%
-        position: absolute
-        top: 0
-        left: -25%
-        z-index: 3
-        background-color: $colorGrey
-        @include transform(skewX(12deg))
-        @include transform-origin(top left)
-        @include side-border(none, none, none, 1px solid $colorLightGrey)
+    .event-content-button-wrapper
+      position: absolute
+      left: 2rem
+      bottom: 2rem
 
   @include breakpoint(l)
     width: 95%
-    height: 14em
+    height: 16rem
     .event-image
-      width: 60%
+      width: 50%
     .event-content
-      width: 40%
+      width: 50%
       h2
         font-size: $font-m
       h3
         font-size: $font-s
-      p
-        margin: 0.5rem 0
-        font-size: $font-xs
-      ul
-        font-size: $font-xs
 
   @include breakpoint(m)
     @include flex-direction(column)
-    width: 70%
+    width: 80%
     height: auto
     @include border(1px solid $colorLightGrey)
     margin-bottom: 2rem
@@ -125,16 +84,18 @@
       font-size: 0px
 
     .event-content
+      text-align: left
       width: 100%
+      min-height: 15rem
       @include vertical-padding(1rem, 2rem)
       @include border(none)
-
-      &.odd
-        &::after
-          display: none
-      &.even
-        &::after
-          display: none
+      .event-content-button-wrapper
+        left: auto
+        right: 2rem
 
   @include breakpoint(s)
     width: 85%
+    .event-content
+      .event-content-button-wrapper
+        position: initial
+        margin-top: 1.2rem

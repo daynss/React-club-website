@@ -4,19 +4,7 @@ import events from "../Data/data";
 
 const Program = () => {
   const eventCards = events.map((evt) => (
-    <EventCard
-      key={evt.id}
-      order={evt.id}
-      title={evt.title}
-      img={evt.img}
-      description={evt.description}
-      day={evt.day}
-      date={evt.date}
-      time={evt.time}
-      entry={evt.entry}
-      artists={evt.artist}
-      category_id={evt.category_id}
-    />
+    <EventCard key={evt.id} order={evt.id} evt={evt} />
   ));
   return (
     <div className="Program-outline">

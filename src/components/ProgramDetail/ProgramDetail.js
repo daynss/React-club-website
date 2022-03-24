@@ -1,11 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import events from "../Data/data";
 import Artist from "../Artists/Artist";
 import UpcomingEvents from "../UpcomingEvents/UpcomingEvents";
 import Button from "../BasicComponents/Button/Button";
+import { MdShoppingCart } from "react-icons/md";
+import { connect } from "react-redux";
+import { addItemToCart } from "../../redux/Cart/cartActions";
 
-const ProgramDetail = (props) => {
+const ProgramDetail = ({ addItemToCart, ...props }) => {
   const paramsId = parseInt(props.match.params.id, 10);
   const displayEvent = events.filter((obj) => obj.id === paramsId)[0];
   const similarEvents = events.filter(
@@ -32,10 +34,23 @@ const ProgramDetail = (props) => {
           <p>{displayEvent.description}</p>
           <div className="program-detail-info">
             <p>
-              <span>{`${displayEvent.day} ${displayEvent.date} / ${displayEvent.time} / ${displayEvent.entry}`}</span>
-              {displayEvent.entry === "free" ? "" : <span>&euro;</span>}
+              When: &nbsp;
+              <span>{`${displayEvent.day} ${displayEvent.date} at ${displayEvent.time}`}</span>
             </p>
-            {displayEvent.entry !== "free" && <Button label="Buy Tickets" />}
+            <p>
+              Entry: &nbsp;
+              <span>
+                {`${displayEvent.entry}`}{" "}
+                {displayEvent.entry === "free" ? "" : <span>&euro;</span>}
+              </span>
+            </p>
+            {displayEvent.entry !== "free" && (
+              <Button
+                label={"Add to Cart"}
+                renderIcon={<MdShoppingCart size={22} />}
+                onClick={() => addItemToCart(displayEvent.id)}
+              />
+            )}
           </div>
         </div>
       </div>
@@ -49,4 +64,8 @@ const ProgramDetail = (props) => {
   );
 };
 
-export default ProgramDetail;
+const mapDispatchToProps = (dispatch) => ({
+  addItemToCart: (itemId) => dispatch(addItemToCart(itemId)),
+});
+
+export default connect(null, mapDispatchToProps)(ProgramDetail);

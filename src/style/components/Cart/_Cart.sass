@@ -1,0 +1,25 @@
+.cart
+    padding-top: 6rem
+    width: 85%
+    @include centering-margin()
+    width:
+    .cart-list-item
+        width: 50rem
+        @include flexbox()
+
+        margin-bottom: 2rem
+
+        .cart-list-item-content
+            background-color: $colorGrey
+            @include side-border(none, 1px solid $colorLightGrey, 1px solid $colorLightGrey, none)
+            text-align: left
+            width: 60%
+            @include vertical-padding(1rem)
+            @include horizontal-padding(2rem)
+            @include flexbox()
+            @include justify-content(space-between)
+            h2
+                margin-top: 0
+                font-size: 1.2rem
+
+        .cart-list-item-quantity-selector
