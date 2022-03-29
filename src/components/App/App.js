@@ -8,6 +8,7 @@ import Program from "../Program/Program";
 import Contact from "../Contact/Contact";
 import ProgramDetail from "../ProgramDetail/ProgramDetail";
 import Cart from "../Cart/Cart";
+import Checkout from "../Checkout/Checkout";
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
           <Route path="/contact" component={Contact} />
           <Route exact path="/detail/:id" component={ProgramDetail} />
           <Route path="/cart" component={Cart} />
+          <Route path="/checkout" component={Checkout} />
         </Switch>
         <Footer />
       </div>

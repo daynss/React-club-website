@@ -5,9 +5,10 @@ import UpcomingEvents from "../UpcomingEvents/UpcomingEvents";
 import Button from "../BasicComponents/Button/Button";
 import { MdShoppingCart } from "react-icons/md";
 import { connect } from "react-redux";
-import { addItemToCart } from "../../redux/Cart/cartActions";
+import { addToCart } from "../../redux/Cart/cartActions";
+import Divider from "../BasicComponents/Divider/Divider";
 
-const ProgramDetail = ({ addItemToCart, ...props }) => {
+const ProgramDetail = ({ addToCart, ...props }) => {
   const paramsId = parseInt(props.match.params.id, 10);
   const displayEvent = events.filter((obj) => obj.id === paramsId)[0];
   const similarEvents = events.filter(
@@ -28,7 +29,7 @@ const ProgramDetail = ({ addItemToCart, ...props }) => {
         </div>
         <div className="program-detail-description">
           <Artist
-            artist={displayEvent.artist}
+            artists={displayEvent.artist}
             category={displayEvent.category_id}
           />
           <p>{displayEvent.description}</p>
@@ -41,14 +42,15 @@ const ProgramDetail = ({ addItemToCart, ...props }) => {
               Entry: &nbsp;
               <span>
                 {`${displayEvent.entry}`}{" "}
-                {displayEvent.entry === "free" ? "" : <span>&euro;</span>}
+                {displayEvent.entry === "free" ? "" : <span> &euro;</span>}
               </span>
             </p>
+            <Divider />
             {displayEvent.entry !== "free" && (
               <Button
                 label={"Add to Cart"}
                 renderIcon={<MdShoppingCart size={22} />}
-                onClick={() => addItemToCart(displayEvent.id)}
+                onClick={() => addToCart(displayEvent)}
               />
             )}
           </div>
@@ -65,7 +67,7 @@ const ProgramDetail = ({ addItemToCart, ...props }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  addItemToCart: (itemId) => dispatch(addItemToCart(itemId)),
+  addToCart: (item) => dispatch(addToCart(item)),
 });
 
 export default connect(null, mapDispatchToProps)(ProgramDetail);

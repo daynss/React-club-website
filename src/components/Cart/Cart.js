@@ -1,69 +1,65 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import Divider from "../BasicComponents/Divider/Divider";
-import { removeItemFromCart } from "../../redux/Cart/cartActions";
-import events from "../Data/data";
+import CartItem from "./CartItem";
+import LinkButton from "../BasicComponents/LinkButton/LinkButton";
 
-const Cart = ({ cart: { cartItems }, removeItemFromCart }) => {
-  const [itemsInCart, setItemsInCart] = useState([]);
+const Cart = ({ cart: { cartItems } }) => {
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
 
   useEffect(() => {
-    const items = [];
-    for (let key in cartItems) {
-      events.forEach((evt) => {
-        console.log(key);
-        if (evt.id === Number(key)) {
-          items.push({ ...evt, qty: cartItems[key].quantity });
-        }
+    if (cartItems.length !== 0) {
+      let totalItems = 0;
+      let totalPrice = 0;
+
+      cartItems.forEach((item) => {
+        totalItems += item.qty;
+        totalPrice += item.qty * item.entry;
       });
+
+      setTotalItems(totalItems);
+      setTotalPrice(totalPrice);
     }
-    setItemsInCart(items);
-  }, []);
+  }, [cartItems]);
+
+  const CartEmpty = () => {
+    return <div className="cart-empty">There is nothing in the cart</div>;
+  };
 
   return (
     <div className="cart">
-      <div className="cart-list">
-        {itemsInCart.map((item) => {
-          const { order, title, day, date, time, entry, qty } = item;
-          return (
-            <div className="cart-list-item">
-              <div className="cart-list-item-content">
-                <div>
-                  <Link to={`/detail/${order}`}>
-                    <h2>{title}</h2>{" "}
-                  </Link>
-                  <span>
-                    {day}, {date} {time ? "at " + time : " "}
-                  </span>
-                  <Divider />
-                  <span>Entry: {entry}&euro; </span>
-                  <Divider />
-                </div>
-                <div className="cart-list-item-quantity-selector">
-                  <label for="quantity">Quantity:</label>
-                  <input
-                    type="number"
-                    id="quantity"
-                    value={qty}
-                    onChange={(e) => console.log(e.target.value)}
-                  />
-                  {/* Quantity: {qty} */}
-                  {/* create a number selector for quantity */}
-                </div>
-              </div>
+      {cartItems.length !== 0 ? (
+        <div className="cart-items">
+          <div className="cart-list">
+            {cartItems.map((item) => (
+              <CartItem key={item.id} cartItem={item} />
+            ))}
+          </div>
+          <div className="cart-summary">
+            <h2>Cart Summary</h2>
+            <div className="cart-summary-total">
+              <span>
+                <span className="cart-total-items-label">Total:</span>{" "}
+                {totalItems} items{" "}
+              </span>
+              <Divider />
+              <span>
+                <span className="cart-total-price-label">Price:</span>{" "}
+                {totalPrice} &euro;
+              </span>
             </div>
-          );
-        })}
-      </div>
+            <Divider />
+            <LinkButton label="Checkout" href={`/checkout`} />
+          </div>
+        </div>
+      ) : (
+        <div className="cart-empty">There is nothing in the cart</div>
+      )}
     </div>
   );
 };
 
 const mapStateToProps = (state, props) => ({ cart: state.cart });
 
-const mapDispatchToProps = {
-  removeItemFromCart,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default connect(mapStateToProps)(Cart);

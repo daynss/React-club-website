@@ -1,19 +1,21 @@
 .Intro
   width: 100%
+  min-height: calc(100vh - 10rem)
   @include centering-margin()
   @include flexbox()
   @include flex-direction(column)
   @include justify-content(space-around)
 
   .intro-wrapper
-    width: 90%
-    height: 100vh
+    width: 100%
+    height: 70vh
     @include centering-margin(0, 5rem)
     @include flexbox()
     @include flex-direction(column)
     @include background-image("https://preview.ibb.co/httNm7/james_barr_491013_unsplash.jpg")
     @include justify-content(center)
-
+    @include breakpoint(m)
+      height: 60vh
     .intro-description
       color: $colorWhite
       width: 70%
@@ -28,6 +30,7 @@
           line-height: $font-l
 
       @include breakpoint(m)
+        width: 90%
         h1
           font-size: $font-l
         h3

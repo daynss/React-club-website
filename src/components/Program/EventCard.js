@@ -3,17 +3,18 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { MdShoppingCart } from "react-icons/md";
 import Button from "../BasicComponents/Button/Button";
+import LinkButton from "../BasicComponents/LinkButton/LinkButton";
 import Divider from "../BasicComponents/Divider/Divider";
-import { addItemToCart } from "../../redux/Cart/cartActions";
+import { addToCart } from "../../redux/Cart/cartActions";
 
-const EventCard = ({ key, order, evt, addItemToCart }) => {
-  const { title, img, day, date, time, entry, category_id } = evt;
+const EventCard = ({ evt, addToCart }) => {
+  const { id, title, img, day, date, time, entry, category_id } = evt;
 
   return (
     <div className="Event-card">
       <div className={`event-image ${img ? "" : "empty"}`}>
         {category_id !== "private_event" && (
-          <Link to={`/detail/${order}`}>
+          <Link to={`/detail/${id}`}>
             <img src={img} alt={title} />
           </Link>
         )}
@@ -26,12 +27,13 @@ const EventCard = ({ key, order, evt, addItemToCart }) => {
           </span>
           <Divider />
           {entry === "free" && <span>Entry: free</span>}
-          {entry && entry !== "free" && <span>Entry: {entry}&euro; </span>}
+          {entry && entry !== "free" && <span>Entry: {entry} &euro; </span>}
           <Divider />
           {category_id !== "private_event" && (
-            <Link to={`/detail/${order}`}>
-              <span className="detail-link">Read more</span>
-            </Link>
+            <LinkButton kind="ghost" label="Read more" href={`/detail/${id}`} />
+            // <Link to={`/detail/${id}`}>
+            //   <span className="detail-link">Read more</span>
+            // </Link>
           )}
         </div>
         {category_id !== "private_event" && entry !== "free" && (
@@ -39,7 +41,7 @@ const EventCard = ({ key, order, evt, addItemToCart }) => {
             <Button
               label={"Add to Cart"}
               renderIcon={<MdShoppingCart size={22} />}
-              onClick={() => addItemToCart(evt.id)}
+              onClick={() => addToCart(evt)}
             />
           </div>
         )}
@@ -49,7 +51,7 @@ const EventCard = ({ key, order, evt, addItemToCart }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  addItemToCart: (itemId) => dispatch(addItemToCart(itemId)),
+  addToCart: (item) => dispatch(addToCart(item)),
 });
 
 export default connect(null, mapDispatchToProps)(EventCard);

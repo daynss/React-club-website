@@ -3,9 +3,7 @@ import EventCard from "./EventCard";
 import events from "../Data/data";
 
 const Program = () => {
-  const eventCards = events.map((evt) => (
-    <EventCard key={evt.id} order={evt.id} evt={evt} />
-  ));
+  const eventCards = events.map((evt) => <EventCard key={evt.id} evt={evt} />);
   return (
     <div className="Program-outline">
       <h2>August 2022</h2>

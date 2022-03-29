@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LinkButton from "../BasicComponents/LinkButton/LinkButton";
 
 const UpcomingEvents = (props) => {
   return (
     <div className="UpcomingEvents">
       {props.events.map((event) => {
-        console.log(event);
         const { title, id, img, day, date } = event;
         return (
-          <div className="UpcomingEvent">
+          <div key={id} className="UpcomingEvent">
             <div className="upcoming-img">
               <img src={img} alt={title} />
             </div>
@@ -18,9 +18,11 @@ const UpcomingEvents = (props) => {
                 <p>
                   {day} {date}{" "}
                 </p>
-                <Link to={`/detail/${id}`}>
-                  <p className="detail-link">Read more</p>
-                </Link>
+                <LinkButton
+                  kind="ghost"
+                  label="Read more"
+                  href={`/detail/${id}`}
+                />
               </div>
             </div>
           </div>

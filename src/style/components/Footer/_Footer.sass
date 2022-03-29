@@ -1,7 +1,25 @@
 .Footer
-  height: 5em
+  height: 10rem
+  margin-top: 5rem
   background-color: $colorGrey
-  margin-top: 5em
+  font-size: $font-xs
 
-  & > p
-    @include vertical-padding(3rem, 0)
+  .contact-info-panel
+    width: 80%
+    text-align: center
+    @include centering-margin()
+    @include vertical-padding(1rem)
+    @include breakpoint(m)
+      width: 90%
+    .contact-address
+      svg
+        vertical-align: middle !important
+        padding-right: 0.25rem
+    .contact-social-media
+      @include vertical-padding(0.5rem, 0)
+      svg:hover
+        cursor: pointer
+        opacity: 0.5
+        @include breakpoint(m)
+          @include flexbox()
+          @include justify-content(center)

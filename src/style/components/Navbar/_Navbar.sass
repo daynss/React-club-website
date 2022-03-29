@@ -14,7 +14,7 @@
     @include align-items(baseline)
 
     .navbar-responsive
-      width: 20%
+      width: fit-content
       background-color: $colorWhite
       @include flexbox()
       @include justify-content(space-between)
@@ -73,6 +73,7 @@
         @include centering-margin()
         @include flexbox()
         @include justify-content(space-between)
+        @include align-items(center)
 
         li
           text-align: right
@@ -89,6 +90,7 @@
         &.checkout-link
           @include flexbox()
           @include justify-content(flex-end)
+          @include align-items(center)
           span
             padding-left: 0.25rem
             font-weight: bold
@@ -99,7 +101,7 @@
             height: 1.5rem
 
   @include breakpoint(m)
-    @include vertical-padding(1rem, 0)
+    @include vertical-padding(1rem)
     .navbar-container
       @include flex-direction(column)
       @include align-items(center)
@@ -107,7 +109,6 @@
       .navbar-responsive
         width: 100%
         .logo
-          width: 20%
           text-align: left
           font-size: $font-m
         .nav-icons
@@ -120,10 +121,11 @@
       .navbar-links
         width: 100%
         @include flex-direction(column)
-        @include transition(1s)
         &.hidden
+          display: none
           margin-top: -100%
         &.visible
+          display: flex
           margin-top: 0
         & ul
           @include flex-direction(column)

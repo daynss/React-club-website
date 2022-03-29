@@ -2,7 +2,6 @@
   width: 90%
   @include centering-margin()
   @include flexbox()
-
   @include breakpoint(m)
     width: 70%
     @include centering-margin()
@@ -10,23 +9,25 @@
     @include align-items(center)
 
   @include breakpoint(s)
-    width: 95%
+    width: 90%
 
   .UpcomingEvent
     width: 30%
-    background-color: $colorGrey
-    @include flexbox()
-    @include flex-direction(column)
-    @include align-items(center)
-    @include border(1px solid $colorLightGrey)
+    @include breakpoint(m)
+      width: 100%
+      margin-bottom: 1.5rem
+
     &:not(:last-child)
       margin-right: 5%
-
     .upcoming-img
       width: 100%
       overflow: hidden
+      line-height: 0
+      @include border(1px solid $colorLightGrey, 10px 10px 0 0)
       img
         width: 100%
+        height: 100%
+      @include breakpoint(m)
         height: auto
 
     h3
@@ -36,29 +37,22 @@
     .upcoming-body
       width: 100%
       text-align: center
+      background-color: $colorGrey
+      @include border(1px solid $colorLightGrey, 0 0 10px 10px)
+      padding-bottom: 1rem
 
-    .detail-link
-      @include vertical-padding(2rem, 0)
-      color: blue
-      &:hover
-        opacity: 0.6
-        cursor: pointer
-
-    @include breakpoint(m)
-      width: 100%
-      margin-bottom: 1.5rem
-      &:not(:last-child)
-        margin-right: 0
-      .upcoming-body
-        padding-bottom: 1rem
-        .upcoming-body-text
+      .upcoming-body-text
+        @include flexbox()
+        @include flex-direction(column)
+        @include align-items(center)
+        @include breakpoint(m)
           h3
             font-size: $font-s
           p
             font-size: $font-xs
-
-    @include breakpoint(s)
-      .upcoming-body
-        .upcoming-body-text
+        @include breakpoint(s)
           h3
             font-size: $font-xs
+
+      // &:not(:last-child)
+      //   margin-right: 0

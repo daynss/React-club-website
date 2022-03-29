@@ -30,6 +30,13 @@ class Navbar extends Component {
   };
 
   render() {
+    const cartQty =
+      this.props.cart.cartItems.length !== 0
+        ? this.props.cart.cartItems.reduce((acc, item) => {
+            return acc + item.qty;
+          }, 0)
+        : 0;
+
     return (
       <nav className="Navbar">
         <div className="navbar-container">
@@ -43,10 +50,13 @@ class Navbar extends Component {
               <NavLink
                 className="checkout-link"
                 activeClassName="active"
+                onClick={(e) => {
+                  return cartQty === 0 ? e.preventDefault() : null;
+                }}
                 to="/cart"
               >
                 <MdShoppingCart size={22} />
-                <span>({this.props.cart.totalQty})</span>
+                <span>({cartQty})</span>
               </NavLink>
 
               <div
@@ -67,6 +77,7 @@ class Navbar extends Component {
                   exact
                   activeClassName="active"
                   to="/"
+                  onClick={this.handleClick}
                 >
                   About
                 </NavLink>
@@ -76,6 +87,7 @@ class Navbar extends Component {
                   className="nav-link"
                   activeClassName="active"
                   to="/program"
+                  onClick={this.handleClick}
                 >
                   Program
                 </NavLink>
@@ -86,6 +98,7 @@ class Navbar extends Component {
                   className="nav-link"
                   activeClassName="active"
                   to="/contact"
+                  onClick={this.handleClick}
                 >
                   Contact
                 </NavLink>
@@ -94,12 +107,15 @@ class Navbar extends Component {
                 <NavLink
                   className="nav-link checkout-link"
                   activeClassName="active"
+                  onClick={(e) => {
+                    return cartQty === 0 ? e.preventDefault() : null;
+                  }}
                   to="/cart"
                 >
                   <MdShoppingCart size={22} />
                   <div>
                     <span>Cart</span>
-                    <span>({this.props.cart.totalQty})</span>
+                    <span>({cartQty})</span>
                   </div>
                 </NavLink>
               </li>

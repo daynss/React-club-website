@@ -1,11 +1,19 @@
 .button
   font-size: $font-s
   color: $colorWhite
-  background-color: $colorGreen
   @include flexbox()
   @include border(none, 2px)
-  @include vertical-padding(0.85rem, 0.5rem)
+  @include vertical-padding(0.5rem)
   @include horizontal-padding(1rem)
+  @include align-items(center)
+  &-primary
+    background-color: $colorGreen
+  &-danger
+    background-color: $colorRed
+  &-ghost
+    background-color: transparent
+    color: $colorGreen
+    padding-left: 0
 
   span
     padding-right: 0.5rem
