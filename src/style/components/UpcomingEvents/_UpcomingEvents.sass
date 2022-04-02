@@ -30,29 +30,31 @@
       @include breakpoint(m)
         height: auto
 
-    h3
-      font-size: $font-s
-    p
-      font-size: $font-xs
     .upcoming-body
       width: 100%
       text-align: center
       background-color: $colorGrey
       @include border(1px solid $colorLightGrey, 0 0 10px 10px)
-      padding-bottom: 1rem
+      @include vertical-padding(0, 0.5rem)
+      @include horizontal-padding(0.5rem)
 
       .upcoming-body-text
         @include flexbox()
         @include flex-direction(column)
         @include align-items(center)
-        @include breakpoint(m)
-          h3
+        h3
+          font-size: $font-m
+          @include breakpoint(l)
             font-size: $font-s
-          p
+          @include breakpoint(m)
+            font-size: $font-s
+          @include breakpoint(s)
             font-size: $font-xs
-        @include breakpoint(s)
-          h3
+        p
+          font-size: $font-s
+          margin-top: 0
+          margin-bottom: 0.6rem
+          @include breakpoint(l)
             font-size: $font-xs
-
-      // &:not(:last-child)
-      //   margin-right: 0
+          @include breakpoint(m)
+            font-size: $font-xs

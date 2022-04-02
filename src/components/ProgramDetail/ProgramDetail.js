@@ -9,7 +9,9 @@ import { addToCart } from "../../redux/Cart/cartActions";
 import Divider from "../BasicComponents/Divider/Divider";
 
 const ProgramDetail = ({ addToCart, ...props }) => {
-  const paramsId = parseInt(props.match.params.id, 10);
+  // const paramsId = parseInt(props.match.params.id, 10);
+  const paramsId = props.match.params.id;
+
   const displayEvent = events.filter((obj) => obj.id === paramsId)[0];
   const similarEvents = events.filter(
     (obj) =>

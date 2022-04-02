@@ -11,7 +11,7 @@
     @include centering-margin()
     @include flexbox()
     @include justify-content(space-between)
-    @include align-items(baseline)
+    @include align-items(center)
 
     .navbar-responsive
       width: fit-content
@@ -26,7 +26,8 @@
         text-align: left
 
       .nav-icons
-        display: flex
+        @include flexbox()
+        @include align-items(center)
 
         .checkout-link
           display: none
@@ -37,8 +38,8 @@
             color: $colorRed
           svg
             color: $colorRed
-            width: 1.75rem
-            height: 1.75rem
+            width: 1.35rem
+            height: 1.35rem
 
         .menu-icon
           display: none
@@ -66,7 +67,7 @@
     .navbar-links
       width: 60%
       @include flexbox()
-      @include align-items(baseline)
+      @include align-items(center)
 
       ul
         width: 100%
@@ -97,8 +98,8 @@
             color: $colorRed
           svg
             color: $colorRed
-            width: 1.5rem
-            height: 1.5rem
+            width: 1.35rem
+            height: 1.35rem
 
   @include breakpoint(m)
     @include vertical-padding(1rem)
@@ -115,6 +116,8 @@
           .checkout-link
             @include flexbox()
             @include justify-content(flex-end)
+            span
+              font-size: $font-m
           .menu-icon
             display: block
 
@@ -136,6 +139,6 @@
             @include box-sizing(border-box)
             @include vertical-padding(0.5rem)
             &:last-child
-              @include vertical-padding(0.5rem, 1rem)
+              display: none
         .nav-link.checkout-link
           display: none

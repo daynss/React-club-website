@@ -7,24 +7,39 @@ import { clearCart } from "../../redux/Cart/cartActions";
 const Checkout = ({ clearCart }) => {
   const [checked, setChecked] = useState(false);
   const [toggleTermsDisplay, setToggleTermsDisplay] = useState(false);
+  const [showWarning, setShowWarning] = useState(false);
   const [purchaseCompleted, setPurchaseCompleted] = useState(false);
 
   const handlePurchase = () => {
-    setPurchaseCompleted(true);
-    clearCart();
+    if (!checked) {
+      setShowWarning(true);
+    } else {
+      setPurchaseCompleted(true);
+      clearCart();
+    }
   };
 
   return (
     <div className="checkout">
       {purchaseCompleted && (
         <div className="checkout-purchase-completed">
-          <h3>THANK YOU FOR PURCHASING THE TICKETS!</h3>
+          <h3>Thank you for purchase!</h3>
 
-          <LinkButton label="Go back to program outline" href={`/program`} />
+          <LinkButton
+            label="Back to program outline"
+            href={`/program`}
+            iconLeft={true}
+          />
         </div>
       )}
       {!purchaseCompleted && (
         <>
+          {showWarning && (
+            <div className="checkout-warning">
+              <span>You must agree with the terms and conditions</span>
+            </div>
+          )}
+
           <div className="checkout-checkbox">
             <input
               type="checkbox"
@@ -49,14 +64,9 @@ const Checkout = ({ clearCart }) => {
               .
             </label>
           </div>
-          {checked && (
-            <div className="checkout-purchase-button">
-              <Button
-                label="Purchase tickets"
-                onClick={() => handlePurchase()}
-              />
-            </div>
-          )}
+          <div className="checkout-purchase-button">
+            <Button label="Purchase tickets" onClick={() => handlePurchase()} />
+          </div>
           {toggleTermsDisplay && (
             <div className="terms-conditions-section">
               <h3>TERMS AND CONDITIONS</h3>

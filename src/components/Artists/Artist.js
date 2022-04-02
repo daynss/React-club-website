@@ -37,7 +37,7 @@ const Artist = ({ artists, category, inline = false }) => {
         style={{
           display: "block",
           fontWeight: "bold",
-          marginBottom: "0.25rem",
+          color: "#16878c",
         }}
       >
         {" "}

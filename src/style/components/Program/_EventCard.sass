@@ -11,7 +11,7 @@
     @include border(1px solid $colorLightGrey, 10px 0 0 10px)
 
     &.empty
-      background-color: $colorBlack
+      background-color: $colorRed
       min-height: 15rem
 
     img
@@ -38,8 +38,11 @@
 
     h2
       margin-top: 1rem
-      color: black
-      font-size: 1.2rem
+      color: $colorBlack
+      font-size: $font-m
+
+    .event-info
+      padding-bottom: 0.6rem
 
     .detail-link
       color: blue
@@ -50,7 +53,9 @@
     .event-content-button-wrapper
       position: absolute
       left: 2rem
-      bottom: 2rem
+      bottom: 1.5rem
+      @include breakpoint(m)
+        left: 1.5rem
 
   @include breakpoint(xl)
     width: 70%
@@ -62,9 +67,9 @@
     .event-content
       width: 50%
       h2
-        font-size: $font-m
-      h3
         font-size: $font-s
+      .event-info
+        font-size: $font-xs
 
   @include breakpoint(m)
     @include flex-direction(column)
@@ -82,14 +87,10 @@
       width: 100%
       min-height: 15rem
       @include vertical-padding(1rem, 2rem)
+      @include horizontal-padding(1.5rem, 1rem)
       @include border(1px solid $colorLightGrey, 0 0 10px 10px)
-      .event-content-button-wrapper
-        left: auto
-        right: 2rem
 
   @include breakpoint(s)
     width: 85%
     .event-content
-      .event-content-button-wrapper
-        position: initial
-        margin-top: 1.2rem
+      padding-bottom: 4rem

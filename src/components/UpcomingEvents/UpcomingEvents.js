@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import LinkButton from "../BasicComponents/LinkButton/LinkButton";
 
 const UpcomingEvents = (props) => {
@@ -22,6 +21,7 @@ const UpcomingEvents = (props) => {
                   kind="ghost"
                   label="Read more"
                   href={`/detail/${id}`}
+                  iconRight={true}
                 />
               </div>
             </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { MdShoppingCart } from "react-icons/md";
+import { FaShoppingCart } from "react-icons/fa";
 import Button from "../BasicComponents/Button/Button";
 import LinkButton from "../BasicComponents/LinkButton/LinkButton";
 import Divider from "../BasicComponents/Divider/Divider";
@@ -21,26 +21,27 @@ const EventCard = ({ evt, addToCart }) => {
       </div>
       <div className={`event-content`}>
         <h2>{title}</h2>
-        <div>
+        <div className="event-info">
           <span>
             {day}, {date} {time ? "at " + time : " "}
           </span>
           <Divider />
           {entry === "free" && <span>Entry: free</span>}
           {entry && entry !== "free" && <span>Entry: {entry} &euro; </span>}
-          <Divider />
-          {category_id !== "private_event" && (
-            <LinkButton kind="ghost" label="Read more" href={`/detail/${id}`} />
-            // <Link to={`/detail/${id}`}>
-            //   <span className="detail-link">Read more</span>
-            // </Link>
-          )}
         </div>
+        {category_id !== "private_event" && (
+          <LinkButton
+            kind="ghost"
+            label="Read more"
+            href={`/detail/${id}`}
+            iconRight={true}
+          />
+        )}
         {category_id !== "private_event" && entry !== "free" && (
           <div className="event-content-button-wrapper">
             <Button
               label={"Add to Cart"}
-              renderIcon={<MdShoppingCart size={22} />}
+              renderIcon={<FaShoppingCart />}
               onClick={() => addToCart(evt)}
             />
           </div>

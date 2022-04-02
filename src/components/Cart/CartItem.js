@@ -35,7 +35,7 @@ const CartItem = ({ cartItem, removeFromCart, changeQuantity }) => {
         </div>
         <div className="cart-list-item-actions">
           <NumberSelector
-            qty={itemQuantity}
+            qty={itemQuantity === 0 ? 1 : itemQuantity}
             onQtyChange={changeQuantityHandler}
           />
           <Button

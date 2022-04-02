@@ -6,6 +6,7 @@ const Button = ({
   renderIcon = false,
   onClick,
   kind = "primary",
+  disabled = false,
 }) => {
   const classNames = {
     primary: "button-primary",
@@ -17,6 +18,7 @@ const Button = ({
       className={`button ${classNames[kind]}`}
       type={type}
       onClick={onClick}
+      disabled={disabled}
     >
       <span>{label} </span>
       {renderIcon}

@@ -15,11 +15,16 @@
     color: $colorGreen
     padding-left: 0
 
-  span
-    padding-right: 0.5rem
+  svg
+    margin-left: 0.5rem
+    width: 18px
+    height: 18px
 
   &:hover
     opacity: 0.8
 
   @include breakpoint(l)
     font-size: $font-xs
+    svg
+      height: 16px
+      width: 16px

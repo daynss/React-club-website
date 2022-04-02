@@ -23,13 +23,21 @@ const Cart = ({ cart: { cartItems } }) => {
     }
   }, [cartItems]);
 
-  const CartEmpty = () => {
-    return <div className="cart-empty">There is nothing in the cart</div>;
-  };
-
   return (
-    <div className="cart">
-      {cartItems.length !== 0 ? (
+    <div className="Cart">
+      <div className="cart-program-link-section">
+        <LinkButton
+          label="Back to program outline"
+          href={`/program`}
+          iconLeft={true}
+        />
+      </div>
+      {cartItems.length === 0 && (
+        <div className="cart-empty">
+          <h3>There is nothing in the cart</h3>
+        </div>
+      )}
+      {cartItems.length !== 0 && (
         <div className="cart-items">
           <div className="cart-list">
             {cartItems.map((item) => (
@@ -53,8 +61,6 @@ const Cart = ({ cart: { cartItems } }) => {
             <LinkButton label="Checkout" href={`/checkout`} />
           </div>
         </div>
-      ) : (
-        <div className="cart-empty">There is nothing in the cart</div>
       )}
     </div>
   );

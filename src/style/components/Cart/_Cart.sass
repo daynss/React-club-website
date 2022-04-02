@@ -1,12 +1,21 @@
-.cart
-    padding-top: 10rem
+.Cart
+    padding-top: 8rem
     width: 80%
     min-height: calc(100vh - 15rem)
     @include centering-margin()
     @include breakpoint(l)
         width: 90%
+    .cart-program-link-section
+        @include vertical-padding(1rem, 0)
+    .cart-empty
+        @include flexbox()
+        @include flex-direction(column)
+        @include align-items(flex-start)
+        h3
+            color: $colorGreen
     .cart-items
         @include flexbox()
+        @include vertical-padding(2rem)
         @include breakpoint(m)
             @include flex-direction(column)
             @include align-items(center)
@@ -31,9 +40,15 @@
                     @include horizontal-padding(1rem)
                     @include flexbox()
                     @include justify-content(space-between)
+                    @include breakpoint(l)
+                        font-size: $font-xs
                     h2
                         margin-top: 0
                         font-size: 1.2rem
+                        &:hover
+                            opacity: 0.6
+                        @include breakpoint(l)
+                            font-size: $font-s
                     .cart-list-item-event
                         width: 70%
                     .cart-list-item-actions
@@ -66,11 +81,14 @@
 
             h2
                 margin-top: 0
+                color: $colorGreen
             .cart-summary-total
+                font-weight: bold
                 margin-bottom: 2rem
                 .cart-total-items-label,
                 .cart-total-price-label
                     font-weight: bold
+                    color: $colorGreen
             .link-button
                 position: absolute
                 right: 1rem
@@ -82,5 +100,3 @@
                 max-width: none
                 h2
                     font-size: $font-m
-
-        .cart-empty
