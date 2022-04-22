@@ -13,7 +13,7 @@ import Checkout from "../Checkout/Checkout";
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <Navbar />
         <Switch>
           <Route exact path="/" component={About} />

@@ -6,7 +6,7 @@ const Intro = () => {
   const upcoming = events.filter((evt) => evt.category_id !== "private_event");
 
   return (
-    <div className="Intro">
+    <div className="intro">
       <div className="intro-wrapper">
         <div className="intro-description">
           <h1>Imaginarium Club</h1>

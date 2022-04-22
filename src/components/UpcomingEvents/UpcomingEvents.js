@@ -3,11 +3,11 @@ import LinkButton from "../BasicComponents/LinkButton/LinkButton";
 
 const UpcomingEvents = (props) => {
   return (
-    <div className="UpcomingEvents">
+    <div className="upcomingEvents">
       {props.events.map((event) => {
         const { title, id, img, day, date } = event;
         return (
-          <div key={id} className="UpcomingEvent">
+          <div key={id} className="upcomingEvent">
             <div className="upcoming-img">
               <img src={img} alt={title} />
             </div>

@@ -7,7 +7,7 @@ import Divider from "../BasicComponents/Divider/Divider";
 import Button from "../BasicComponents/Button/Button";
 
 const Contact = ({ handleSubmit, onSubmit, submitting, submitSucceeded }) => (
-  <div className="Contact">
+  <div className="contact">
     <div className="contact-wrapper">
       {submitSucceeded ? (
         <div className="contact-form-success">

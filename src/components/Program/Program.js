@@ -5,7 +5,7 @@ import events from "../Data/data";
 const Program = () => {
   const eventCards = events.map((evt) => <EventCard key={evt.id} evt={evt} />);
   return (
-    <div className="Program-outline">
+    <div className="program-outline">
       <h2>August 2022</h2>
       {eventCards}
     </div>

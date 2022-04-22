@@ -23,11 +23,15 @@ const Navbar = ({ cart }) => {
   };
 
   return (
-    <nav className="Navbar">
+    <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-responsive">
           <div className="logo">
-            <NavLink className="nav-link" to="/">
+            <NavLink
+              className="nav-link"
+              to="/"
+              onClick={mobileMenuVisible ? handleClick : null}
+            >
               Imaginarium Club
             </NavLink>
           </div>

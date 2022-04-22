@@ -1,10 +1,10 @@
-import React from 'react';
-import Intro from '../Intro/Intro';
+import React from "react";
+import Intro from "../Intro/Intro";
 
 const About = () => (
-    <div className="About">
-        <Intro />
-    </div>
+  <div className="about">
+    <Intro />
+  </div>
 );
 
 export default About;

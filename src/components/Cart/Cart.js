@@ -24,7 +24,7 @@ const Cart = ({ cart: { cartItems } }) => {
   }, [cartItems]);
 
   return (
-    <div className="Cart">
+    <div className="cart">
       <div className="cart-program-link-section">
         <LinkButton
           label="Back to program outline"

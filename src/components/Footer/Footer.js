@@ -8,7 +8,7 @@ const iconStyle = {
 };
 
 const Footer = () => (
-  <div className="Footer">
+  <div className="footer">
     <div className="contact-info-panel">
       <div className="contact-address">
         <MdLocationOn size={22} style={iconStyle} />
@@ -22,7 +22,7 @@ const Footer = () => (
         <FaInstagram size={20} />
       </div>
     </div>
-    <div>&copy;daynssjal</div>
+    <div>&copy; www.learnbrella.eu</div>
   </div>
 );
 

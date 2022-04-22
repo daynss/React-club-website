@@ -136,28 +136,6 @@ const Checkout = ({ clearCart }) => {
                   varius, velit dolor blandit felis, quis blandit nibh mi a
                   nibh. Mauris placerat tortor vitae lacus condimentum cursus.{" "}
                 </p>
-                <p>
-                  Aenean bibendum auctor felis, non varius diam pellentesque
-                  vel. Quisque dui odio, dictum in metus eu, viverra
-                  pellentesque magna. In felis velit, lacinia id tortor sed,
-                  pellentesque ultricies lectus. Pellentesque venenatis turpis
-                  augue, eu bibendum tellus suscipit a. Etiam tincidunt, neque
-                  gravida eleifend efficitur, massa odio auctor ipsum, eu
-                  accumsan elit nisi nec velit. Praesent semper lorem ut nisi
-                  rutrum, non laoreet lacus sollicitudin. Quisque rhoncus
-                  vulputate tellus, convallis ultricies turpis luctus id. Fusce
-                  quis rhoncus sem. Vestibulum tortor tortor, fermentum eget
-                  placerat nec, finibus sit amet leo. Sed vulputate turpis
-                  ultrices eleifend maximus. Nullam posuere fermentum felis, vel
-                  tempus diam luctus vitae. Vestibulum sit amet pulvinar nisi.
-                  Duis pulvinar urna quis neque commodo, quis pharetra felis
-                  laoreet. Duis in orci et lectus laoreet auctor. Integer quis
-                  quam sollicitudin, pulvinar erat a, hendrerit lacus. Nulla et
-                  posuere enim. Donec libero erat, iaculis ac mauris quis,
-                  malesuada euismod dolor. Duis ligula libero, dapibus sed enim
-                  sit amet, gravida porta erat. Pellentesque blandit neque orci,
-                  id faucibus felis bibendum et.
-                </p>
               </div>
             </div>
           )}
