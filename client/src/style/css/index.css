@@ -345,7 +345,7 @@
   min-height: calc(100vh - 15rem); }
   .contact .contact-wrapper {
     width: 100%;
-    height: 70vh;
+    min-height: 70vh;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -368,9 +368,11 @@
     background-attachment: fixed; }
     @media (max-width: 760px) {
       .contact .contact-wrapper {
-        height: 60vh; } }
+        min-height: 60vh; } }
     .contact .contact-wrapper .contact-form {
-      width: 50%; }
+      width: 50%;
+      padding-top: 2em;
+      padding-bottom: 2em; }
       .contact .contact-wrapper .contact-form input,
       .contact .contact-wrapper .contact-form textarea {
         margin: 0.5em 0;
@@ -870,52 +872,55 @@
         padding-bottom: 4rem; } }
 
 .program-outline {
-  padding-top: 6rem; }
+  padding-top: 6rem;
+  min-height: calc(100vh - 15rem); }
 
 .program-detail {
-  margin: 6rem auto 0;
-  width: 100%;
-  border: 1px solid #eeeeee;
-  border-radius: 0;
-  background-color: #f4f4f4; }
-  .program-detail .program-detail-header {
+  min-height: calc(100vh - 15rem); }
+  .program-detail .program-detail-event {
+    margin: 6rem auto 0;
     width: 100%;
-    text-align: center; }
-    .program-detail .program-detail-header h2 {
-      margin: 3rem 0 1rem; }
-    .program-detail .program-detail-header h4 {
-      margin-top: 0; }
-  .program-detail .program-detail-image-wrapper {
-    width: 60%;
-    padding-top: 2rem;
-    padding-bottom: 0;
-    margin: 0 auto 0; }
-    @media (max-width: 1100px) {
-      .program-detail .program-detail-image-wrapper {
-        width: 70%; } }
-    @media (max-width: 480px) {
-      .program-detail .program-detail-image-wrapper {
-        width: 90%; } }
-    .program-detail .program-detail-image-wrapper img {
+    border: 1px solid #eeeeee;
+    border-radius: 0;
+    background-color: #f4f4f4; }
+    .program-detail .program-detail-event .program-detail-event-header {
       width: 100%;
-      height: auto; }
-  .program-detail .program-detail-description {
-    width: 60%;
-    padding-top: 2rem;
-    padding-bottom: 0;
-    margin: 0 auto 0;
-    text-align: left; }
-    @media (max-width: 1100px) {
-      .program-detail .program-detail-description {
-        width: 70%; } }
-    @media (max-width: 480px) {
-      .program-detail .program-detail-description {
-        width: 90%; } }
-  .program-detail .program-detail-info {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    text-align: left;
-    font-weight: bold; }
+      text-align: center; }
+      .program-detail .program-detail-event .program-detail-event-header h2 {
+        margin: 3rem 0 1rem; }
+      .program-detail .program-detail-event .program-detail-event-header h4 {
+        margin-top: 0; }
+    .program-detail .program-detail-event .program-detail-event-image-wrapper {
+      width: 60%;
+      padding-top: 2rem;
+      padding-bottom: 0;
+      margin: 0 auto 0; }
+      @media (max-width: 1100px) {
+        .program-detail .program-detail-event .program-detail-event-image-wrapper {
+          width: 70%; } }
+      @media (max-width: 480px) {
+        .program-detail .program-detail-event .program-detail-event-image-wrapper {
+          width: 90%; } }
+      .program-detail .program-detail-event .program-detail-event-image-wrapper img {
+        width: 100%;
+        height: auto; }
+    .program-detail .program-detail-event .program-detail-event-description {
+      width: 60%;
+      padding-top: 2rem;
+      padding-bottom: 0;
+      margin: 0 auto 0;
+      text-align: left; }
+      @media (max-width: 1100px) {
+        .program-detail .program-detail-event .program-detail-event-description {
+          width: 70%; } }
+      @media (max-width: 480px) {
+        .program-detail .program-detail-event .program-detail-event-description {
+          width: 90%; } }
+    .program-detail .program-detail-event .program-detail-event-info {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      text-align: left;
+      font-weight: bold; }
 
 .upcomingEvents {
   width: 90%;

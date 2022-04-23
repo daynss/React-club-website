@@ -22,7 +22,7 @@ const Footer = () => (
         <FaInstagram size={20} />
       </div>
     </div>
-    <div>&copy; www.learnbrella.eu</div>
+    <div>www.learnbrella.eu</div>
   </div>
 );
 

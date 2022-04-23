@@ -52,9 +52,9 @@ const CartItem = ({ cartItem, removeFromCart, changeQuantity }) => {
 
 const mapStateToProps = (state, props) => ({ cart: state.cart });
 
-const mapDispatchToProps = (dispatch) => ({
-  removeFromCart: (id) => dispatch(removeFromCart(id)),
-  changeQuantity: (id, value) => dispatch(changeQuantity(id, value)),
-});
+const mapDispatchToProps = {
+  removeFromCart,
+  changeQuantity,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartItem);

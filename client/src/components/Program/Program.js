@@ -1,8 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
 import EventCard from "./EventCard";
-import events from "../Data/data";
 
-const Program = () => {
+const Program = ({ events }) => {
   const eventCards = events.map((evt) => <EventCard key={evt.id} evt={evt} />);
   return (
     <div className="program-outline">
@@ -12,4 +12,8 @@ const Program = () => {
   );
 };
 
-export default Program;
+const mapStateToProps = (state) => ({
+  events: state.events.eventItems,
+});
+
+export default connect(mapStateToProps, null)(Program);

@@ -51,8 +51,8 @@ const EventCard = ({ evt, addToCart }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  addToCart: (item) => dispatch(addToCart(item)),
-});
+const mapDispatchToProps = {
+  addToCart,
+};
 
 export default connect(null, mapDispatchToProps)(EventCard);

@@ -1,41 +1,44 @@
 .program-detail
-  @include centering-margin(6rem)
-  width: 100%
-  @include border(1px solid $colorLightGrey)
-  background-color: $colorGrey
+  min-height: calc(100vh - 15rem)
 
-  .program-detail-header
+  .program-detail-event
+    @include centering-margin(6rem)
     width: 100%
-    text-align: center
-    h2
-      margin: 3rem 0 1rem
-    h4
-      margin-top: 0
+    @include border(1px solid $colorLightGrey)
+    background-color: $colorGrey
 
-  .program-detail-image-wrapper
-    width: 60%
-    @include vertical-padding(2rem, 0)
-    @include centering-margin(0)
-    @include breakpoint(l)
-      width: 70%
-    @include breakpoint(s)
-      width: 90%
-    img
+    .program-detail-event-header
       width: 100%
-      height: auto
+      text-align: center
+      h2
+        margin: 3rem 0 1rem
+      h4
+        margin-top: 0
 
-  .program-detail-description
-    width: 60%
-    @include vertical-padding(2rem, 0)
-    @include centering-margin(0)
-    text-align: left
-    @include breakpoint(l)
-      width: 70%
-    @include breakpoint(s)
-      width: 90%
+    .program-detail-event-image-wrapper
+      width: 60%
+      @include vertical-padding(2rem, 0)
+      @include centering-margin(0)
+      @include breakpoint(l)
+        width: 70%
+      @include breakpoint(s)
+        width: 90%
+      img
+        width: 100%
+        height: auto
 
-  .program-detail-info
-    margin-top: 3rem
-    margin-bottom: 3rem
-    text-align: left
-    font-weight: bold
+    .program-detail-event-description
+      width: 60%
+      @include vertical-padding(2rem, 0)
+      @include centering-margin(0)
+      text-align: left
+      @include breakpoint(l)
+        width: 70%
+      @include breakpoint(s)
+        width: 90%
+
+    .program-detail-event-info
+      margin-top: 3rem
+      margin-bottom: 3rem
+      text-align: left
+      font-weight: bold

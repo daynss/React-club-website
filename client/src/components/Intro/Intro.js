@@ -1,8 +1,8 @@
 import React from "react";
-import events from "../Data/data";
+import { connect } from "react-redux";
 import UpcomingEvents from "../UpcomingEvents/UpcomingEvents";
 
-const Intro = () => {
+const Intro = ({ events }) => {
   const upcoming = events.filter((evt) => evt.category_id !== "private_event");
 
   return (
@@ -24,4 +24,8 @@ const Intro = () => {
   );
 };
 
-export default Intro;
+const mapStateToProps = (state) => ({
+  events: state.events.eventItems,
+});
+
+export default connect(mapStateToProps, null)(Intro);
