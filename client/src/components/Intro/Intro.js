@@ -1,10 +1,7 @@
 import React from "react";
-import { connect } from "react-redux";
 import UpcomingEvents from "../UpcomingEvents/UpcomingEvents";
 
-const Intro = ({ events }) => {
-  const upcoming = events.filter((evt) => evt.category_id !== "private_event");
-
+const Intro = () => {
   return (
     <div className="intro">
       <div className="intro-wrapper">
@@ -19,13 +16,9 @@ const Intro = ({ events }) => {
         </div>
       </div>
       <h3>Upcoming Events</h3>
-      <UpcomingEvents events={upcoming.slice(0, 3)} />
+      <UpcomingEvents />
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({
-  events: state.events.eventItems,
-});
-
-export default connect(mapStateToProps, null)(Intro);
+export default Intro;

@@ -12,7 +12,7 @@ import ProgramDetail from "../ProgramDetail/ProgramDetail";
 import Cart from "../Cart/Cart";
 import Checkout from "../Checkout/Checkout";
 
-const App = ({ getEventsList, events: { eventsLoading, eventsError } }) => {
+const App = ({ getEventsList }) => {
   useEffect(() => {
     getEventsList();
   }, []);
@@ -32,11 +32,8 @@ const App = ({ getEventsList, events: { eventsLoading, eventsError } }) => {
     </div>
   );
 };
-const mapStateToProps = (state) => ({
-  events: state.events,
-});
 
 const mapDispatchToProps = {
   getEventsList,
 };
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);

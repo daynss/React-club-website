@@ -14,7 +14,7 @@ export const getEventsList = () => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: EVENTS_ERROR,
-      payload: err,
+      payload: true,
     });
   }
 };

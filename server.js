@@ -1,5 +1,4 @@
 const express = require("express");
-// const events = require("./data.json");
 const events = require("./data.js");
 
 const app = express();
@@ -8,7 +7,6 @@ const app = express();
 // @desc Get all events
 // @access Public
 app.get("/api/events", (req, res) => {
-  // res.send(events);
   res.status(200).send(JSON.stringify(events));
 });
 

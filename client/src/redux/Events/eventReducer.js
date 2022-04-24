@@ -1,9 +1,11 @@
 import { GET_EVENTS, EVENTS_LOADING, EVENTS_ERROR } from "../types";
 
 const initialState = {
+  month: undefined,
+  year: undefined,
   eventItems: [],
   eventsLoading: false,
-  eventsError: null,
+  eventsError: false,
 };
 
 const eventReducer = (state = initialState, action) => {
@@ -11,16 +13,18 @@ const eventReducer = (state = initialState, action) => {
     case GET_EVENTS:
       return {
         ...state,
-        eventItems: action.payload,
+        month: action.payload.month,
+        year: action.payload.year,
+        eventItems: action.payload.eventItems,
         eventsLoading: false,
-        eventsError: null,
+        eventsError: false,
       };
 
     case EVENTS_LOADING:
       return {
         ...state,
         eventsLoading: true,
-        eventsError: null,
+        eventsError: false,
       };
 
     case EVENTS_ERROR:

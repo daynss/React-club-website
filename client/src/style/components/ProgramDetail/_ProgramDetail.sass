@@ -1,8 +1,9 @@
 .program-detail
   min-height: calc(100vh - 15rem)
+  @include vertical-padding(4em, 0)
 
   .program-detail-event
-    @include centering-margin(6rem)
+    @include centering-margin()
     width: 100%
     @include border(1px solid $colorLightGrey)
     background-color: $colorGrey

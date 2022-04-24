@@ -8,10 +8,11 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "sass": "cd ./client && npm run sass",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run sass\""
   },
   "keywords": [],
-  "author": "daynssjal",
+  "author": "daynss",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",

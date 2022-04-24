@@ -6,13 +6,19 @@ import { MdShoppingCart } from "react-icons/md";
 import { connect } from "react-redux";
 import { addToCart } from "../../redux/Cart/cartActions";
 import Divider from "../BasicComponents/Divider/Divider";
+import Error from "../BasicComponents/Error/Error";
 
-const ProgramDetail = ({ addToCart, events, ...props }) => {
+const ProgramDetail = ({
+  addToCart,
+  events: { eventItems, eventsError },
+  ...props
+}) => {
   const paramsId = props.match.params.id;
-  const displayEvent = events && events.filter((obj) => obj.id === paramsId)[0];
+  const displayEvent =
+    eventItems && eventItems.filter((obj) => obj.id === paramsId)[0];
   const similarEvents =
-    events &&
-    events.filter(
+    eventItems &&
+    eventItems.filter(
       (obj) =>
         obj.category_id === displayEvent.category_id &&
         obj.title !== displayEvent.title
@@ -20,7 +26,8 @@ const ProgramDetail = ({ addToCart, events, ...props }) => {
 
   return (
     <div className="program-detail">
-      {events.length !== 0 && (
+      {eventsError && <Error top={4} />}
+      {eventItems.length !== 0 && (
         <>
           <div className="program-detail-event">
             <div className="program-detail-event-header">
@@ -72,7 +79,7 @@ const ProgramDetail = ({ addToCart, events, ...props }) => {
 };
 
 const mapStateToProps = (state) => ({
-  events: state.events.eventItems,
+  events: state.events,
 });
 
 const mapDispatchToProps = {
