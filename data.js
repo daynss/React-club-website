@@ -17,7 +17,7 @@ const events = {
       category_id: "learning_session",
     },
     {
-      id: "breakbeating-10",
+      id: "breakbeatin-10",
       title: "Breakbeatin' vol.10",
       img: "https://cdn.pixabay.com/photo/2016/11/22/19/15/hand-1850120_1280.jpg",
       day: "Friday",

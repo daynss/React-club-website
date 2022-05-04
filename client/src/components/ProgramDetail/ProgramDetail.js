@@ -35,7 +35,11 @@ const ProgramDetail = ({
               <h4>{displayEvent.category}</h4>
             </div>
             <div className="program-detail-event-image-wrapper">
-              <img src={displayEvent.img} alt={displayEvent.title} />
+              <img
+                src={`../img/pixabay_${paramsId}.jpg`}
+                alt={displayEvent.title}
+              />
+              {/* <img src={displayEvent.img} alt={displayEvent.title} /> */}
             </div>
             <div className="program-detail-event-description">
               <Artist
@@ -71,7 +75,7 @@ const ProgramDetail = ({
           <br />
           <br />
           <h4>Similar events</h4>
-          <UpcomingEvents events={similarEvents} />
+          <UpcomingEvents upcoming={similarEvents} />
         </>
       )}
     </div>

@@ -877,9 +877,6 @@
 .program-outline {
   padding-top: 4rem;
   min-height: calc(100vh - 15rem); }
-  .program-outline h2 {
-    padding-top: 2rem;
-    padding-bottom: 0; }
 
 .program-detail {
   min-height: calc(100vh - 15rem);
