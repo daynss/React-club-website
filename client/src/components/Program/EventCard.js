@@ -15,7 +15,8 @@ const EventCard = ({ evt, addToCart }) => {
       <div className={`event-image ${img ? "" : "empty"}`}>
         {category_id !== "private_event" && (
           <Link to={`/detail/${id}`}>
-            <img src={img} alt={title} />
+            <img src={`../img/pixabay_${id}.jpg`} alt={title} />
+            {/* <img src={img} alt={title} /> */}
           </Link>
         )}
       </div>

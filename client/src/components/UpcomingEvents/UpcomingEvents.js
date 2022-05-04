@@ -3,10 +3,12 @@ import { connect } from "react-redux";
 import LinkButton from "../BasicComponents/LinkButton/LinkButton";
 import Error from "../BasicComponents/Error/Error";
 
-const UpcomingEvents = ({ events: { eventItems, eventsError } }) => {
-  const upcomingEvents = eventItems
-    .filter((evt) => evt.category_id !== "private_event")
-    .slice(0, 3);
+const UpcomingEvents = ({ upcoming, events: { eventItems, eventsError } }) => {
+  const upcomingEvents = upcoming
+    ? upcoming.slice(0, 3)
+    : eventItems
+        .filter((evt) => evt.category_id !== "private_event")
+        .slice(0, 3);
 
   return (
     <div className="upcomingEvents">
@@ -19,7 +21,7 @@ const UpcomingEvents = ({ events: { eventItems, eventsError } }) => {
             return (
               <div key={id} className="upcomingEvent">
                 <div className="upcoming-img">
-                  <img src={img} alt={title} />
+                  <img src={`../img/pixabay_${id}.jpg`} alt={title} />
                 </div>
                 <div className="upcoming-body">
                   <div className="upcoming-body-text">

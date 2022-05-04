@@ -6,7 +6,6 @@ export const getEventsList = () => async (dispatch) => {
     const res = await fetch("/api/events");
     const data = await res.json();
 
-    console.log(data);
     dispatch({
       type: GET_EVENTS,
       payload: data,
