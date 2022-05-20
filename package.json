@@ -10,7 +10,7 @@
     "client": "npm start --prefix client",
     "sass": "cd ./client && npm run sass",
     "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run sass\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION===false cd ./client && npm install && cd ./client && npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION===false cd ./client && npm install && npm run build"
   },
   "keywords": [],
   "author": "daynss",
